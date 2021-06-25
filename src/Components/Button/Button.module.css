@@ -1,0 +1,21 @@
+.btn {
+    display: inline-block;
+    width: 150px;
+    border-radius: 40px;
+    line-height: 36px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+}
+
+.bg{
+    background: #119C51;
+    margin-right: 11px;
+}
+
+.active {
+    background-color: #fff;
+    border: 1px solid #119C51;
+    color: #000;
+}
