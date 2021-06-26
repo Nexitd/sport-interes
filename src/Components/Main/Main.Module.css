@@ -1,0 +1,7 @@
+.main {
+    width: 100%;
+    background: url('/src/assets/images/Main/MainHeaderBg/MainBg.jpg') 100% 100% no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+

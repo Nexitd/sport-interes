@@ -1,5 +1,5 @@
 import React from "react";
-import logo from './images/logo_sport 1.svg'
+import logo from '../../assets/images/Header/logo_sport 1.svg'
 import s from "./Header.module.css";
 import Button from "../Button/Button";
 
