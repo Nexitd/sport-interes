@@ -1,6 +1,7 @@
 .prises {
 	max-width: 1440px;
-	margin: 64px auto 71px;
+	margin: 0 auto;
+	padding: 61px 0 74px;
 }
 
 .title {
@@ -31,6 +32,11 @@
 
 .prise__item {
     width: 17%;
+}
+
+.prise__item img {
+	max-width: 100px;
+	object-fit: cover;
 }
 
 .prise__item:first-of-type img:nth-child(2){

@@ -1,0 +1,60 @@
+.table__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #202020;
+    margin-bottom: 37px;
+}
+
+.table {
+    width: 100%;
+    background: #fff;
+    box-shadow: 3px 3px 10px rgba(200, 200, 200, 0.25);
+    border-radius: 5px;
+    padding: 20px 0 35px;
+}
+
+table {
+    width: 100%;
+    padding: 0 20px;
+    border-spacing: 0 20px;
+}
+
+.column__title {
+    font-size: 10px;
+    line-height: 12px;
+    color: #656565;
+}
+
+.border {
+    border-right: 0.5px solid #3E3D3D;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+    color: #515151;
+}
+
+.foot::after {
+    content: url("/src/assets/images/Main/MainBody/TableScore/Group 9.svg");
+
+}
+
+.hoc::after {
+    content: url("/src/assets/images/Main/MainBody/TableScore/Group.svg");
+}
+
+.bas::after {
+    content: url("/src/assets/images/Main/MainBody/TableScore/Group 176.svg");
+}
+
+.column__text {
+    font-size: 12px;
+    line-height: 14px;
+    color: #515151;
+}
+
+.bold__text {
+    font-weight: bold;
+    color: #404040;
+}

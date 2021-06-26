@@ -1,0 +1,17 @@
+.rules {
+    padding: 70px 0;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.rules__title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    color: #119C51;
+    margin-bottom: 30px;
+}

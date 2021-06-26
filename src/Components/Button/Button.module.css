@@ -7,14 +7,16 @@
     font-size: 14px;
     font-weight: bold;
     border: none;
+    outline: none;
+    cursor: pointer;
 }
 
-.bg{
+[data-id="bg"]{
     background: #119C51;
     margin-right: 11px;
 }
 
-.active {
+[data-id="active"] {
     background-color: #fff;
     border: 1px solid #119C51;
     color: #000;
