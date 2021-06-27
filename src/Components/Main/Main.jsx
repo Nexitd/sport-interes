@@ -4,7 +4,7 @@ import Prises from "./MainBody/Prises/Prises";
 import MainTournir from "./MainBody/MainTournir/MainTournir";
 import Points from "./MainBody/Points/Point";
 import Rules from "./MainBody/Rules/Rules";
-import TableScore from "./MainBody/TableScore/TableScore";
+import TableScore from "../TableScore/TableScore";
 import s from "./Main.Module.css";
 
 const Main = () => (

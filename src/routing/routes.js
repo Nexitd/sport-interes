@@ -4,7 +4,7 @@ const routes = {
     main: '/',
     login: '/login',
     registration: '/registration',
-    football: '/footbal',
+    football: '/football',
     hockey: '/hockey',
     basketball: '/basketball',
 };
