@@ -1,36 +1,64 @@
+import { Button, Space } from "antd";
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import logo from "../../assets/images/Header/logo_sport 1.svg";
 import s from "./Header.module.css";
-import Button from "../Button/Button";
 
 const Header = () => {
-        const [now, setTime] = useState(new Date());
-    
-        useEffect(() => {
-            const timer = setInterval(() => {
-                setTime(new Date());
-            }, 1000);
-            return () => {
-                clearInterval(timer);
-            };
-        }, []);
-    
-        let time = now.toLocaleTimeString();
+	const { isAuth } = useSelector(state => state.auth);
+	const [now, setTime] = useState(new Date());
 
-    return (
-        <div className={s.header}>
-            <div className={s.header__container}>
-                <div className={s.item}>
-                    <img className={s.logo} src={logo} alt='' />
-                    <p className={s.time}>{time}</p>
-                </div>
-                <div className={s.item}>
-                    <Button id="bg" value="Личный кабинет"/>
-                    <Button id="active" value="Войти"/>
-                </div>
-            </div>
-        </div>
-    );
+	useEffect(() => {
+		const timer = setInterval(() => {
+				setTime(new Date());
+		}, 1000);
+		return () => {
+				clearInterval(timer);
+		};
+	}, []);
+
+	return (
+		<div className={s.header}>
+			<div className={s.header__container}>
+				<div className={s.item}>
+					<img className={s.logo} src={logo} alt='' />
+					<span className={s.time}>
+						{now.toLocaleTimeString('en-US',
+							{
+								hour: 'numeric',
+								minute: 'numeric',
+								timeZoneName: 'short',
+								hour12: false
+							})
+						}
+					</span>
+				</div>
+				<div className={s.item}>
+					{isAuth ? 
+						(
+							<Space>
+								<Button type="primary" shape="round">
+									Личный кабинет
+								</Button>
+								<Button shape="round">
+									Выйти
+								</Button>
+							</Space>
+						) : (
+							<Space>
+								<Button type="primary" shape="round">
+									Войти
+								</Button>
+								<Button shape="round">
+									Регистраиця
+								</Button>
+							</Space>
+						)
+					}
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Header;

@@ -1,13 +1,15 @@
+import React from 'react';
+import { Provider } from 'react-redux';
+import Routers from './routing/router';
+import store from './store/store';
+import "antd/dist/antd.css";
 import './App.css';
-import Header from './Components/Header/Header';
-import Main from './Components/Main/Main';
 
-const App = (props) => {
+const App = () => {
   return (
-      <div className='wrapper'>
-          <Header />
-          <Main state={ props.state}/>
-      </div>
+    <Provider store={store}>
+      <Routers />
+    </Provider>
   );
 }
 
