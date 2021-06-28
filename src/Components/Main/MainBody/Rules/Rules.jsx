@@ -1,17 +1,45 @@
 import React from "react";
-import s from "./Rules.module.css";
 import RuleCard from "./RuleCard/RuleCard";
+import s from "./Rules.module.css";
 
-const Rules = (props) => {
-    let ruleCard = props.state.Rules.map(card => <RuleCard icon={card.icon} text={card.text}/>) 
+const RulesCard = [
+  {
+    id: 0,
+    icon: "/assets/images/Main/MainBody/Rules/analytics (2) 1.svg",
+    text: "Оцени статистику",
+  },
 
-    return (
-        <div className={s.rules}>
-            <h2 className={s.rules__title}> {props.state.RulesTitle} </h2>
+  {
+    id: 1,
+    icon: "/assets/images/Main/MainBody/Rules/Group.svg",
+    text: "Сделай прогноз",
+  },
 
-            <div className={s.cards}>{ruleCard}</div>
-        </div>
-    );
+  {
+    id: 2,
+    icon: "/assets/images/Main/MainBody/Rules/soccer-gear 1.svg",
+    text: " Следи за матчем в режиме онлайн",
+  },
+
+  {
+    id: 3,
+    icon: "/assets/images/Main/MainBody/Rules/business-and-finance 10.svg",
+    text: "Получи выигрыш",
+  },
+];
+
+const Rules = () => {
+  return (
+    <div className={s.rules}>
+      <h2 className={s.rules__title}> Правила </h2>
+
+      <div className={s.cards}>
+        {RulesCard.map((card) => (
+          <RuleCard icon={card.icon} text={card.text} key={card.id}/>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Rules;

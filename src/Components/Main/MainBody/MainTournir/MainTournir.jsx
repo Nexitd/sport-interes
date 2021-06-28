@@ -31,19 +31,19 @@ const TournirCards = [
 const MainTournir = () => (  // TODO поправить верстку 
     <div className={s.cards}>
         {TournirCards.map((card) => (
-            <Link to={routes[card.color]} gutter={[34, 56]} >
+            <Link to={routes[card.color]} className={s.card} gutter={[34, 56]} >
                 <Card
 					key={card.id}
                     hoverable
-                    style={{ width: 240 }}
+                    style={{ width: '100%', borderRadius: 5 }}
                     cover={<img alt='' src={card.background} />}>
                     <Card.Meta
-						title=''
+                        title=''
                         description={
-                            <>
-                                <span>{card.name}</span>
+                            <div className={s.card__footer}>
+                                <span className={s.[card.color] + ' ' + s.text}>{card.name}</span>
                                 <img src={card.icon} alt='' />
-                            </>
+                            </div>
                         }
                     />
                 </Card>

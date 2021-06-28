@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
-
+import ProfileInfo from '../../Components/Profile/Profile'
 
 const Profile = () => {
   return (

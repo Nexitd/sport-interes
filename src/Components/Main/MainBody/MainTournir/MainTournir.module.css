@@ -3,3 +3,33 @@
     display: flex;
     flex-direction: row;
 }
+
+.card {
+    width: 100%;
+    margin-right: 15px;
+}
+
+.card__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.football {
+    color: #119C51;
+}
+
+.hockey {
+    color: #1779C0;
+}
+
+.basketball {
+    color: #FF5F23;
+}

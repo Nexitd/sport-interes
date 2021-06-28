@@ -1,13 +1,11 @@
 import React from "react";
 import s from "./RuleCard.module.css";
 
-const RuleCard = (props) => {
-    return (
+const RuleCard = ({text, icon}) => (
         <div className={s.card}>
-            <img src={props.icon} alt=""/>
-            <p className={s.card__text}>{props.text}</p>
+            <img src={icon} alt=""/>
+            <p className={s.card__text}>{text}</p>
         </div>
-    );
-};
+);
 
 export default RuleCard;
