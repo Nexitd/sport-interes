@@ -7,7 +7,7 @@ import TournirPage from "../../Components/Tournir/TournirPage";
 
 const Tournir = ({ type }) => {
   return (
-    <div style={{ maxWidth: 1440, margin: '20px auto' }}>
+    <div style={{ maxWidth: 1440, margin: '0 auto', padding: '20px' }}>
       <Breadcrumb>
         <Breadcrumb.Item>
           <Link to={routes.main}>Главная</Link>
