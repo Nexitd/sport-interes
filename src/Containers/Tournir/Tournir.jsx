@@ -10,7 +10,7 @@ import logo from "../../assets/images/Turnir/image 22.svg";
 import s from "./Tournir.module.css";
 import classNames from "classnames";
 
-const TurInfo = [
+export const TurInfo = [
   {
     id: 1,
     img: <img src={logo} alt="" />,

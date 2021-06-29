@@ -14,6 +14,7 @@ import HomePage from "../Containers/HomePage";
 import Header from "../Containers/Header";
 import Tournir from "../Containers/Tournir";
 import Profile from "../Containers/Profile";
+import Footer from '../Components/Footer/Footer'
 
 const antIcon = (
   <LoadingOutlined
@@ -95,6 +96,7 @@ const Routers = () => {
               </Route>
             </div>
           </Switch>
+          <Footer />
         </Router>
       </Suspense>
     </ErrorBoundary>

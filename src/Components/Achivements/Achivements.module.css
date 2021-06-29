@@ -1,0 +1,38 @@
+.title {
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 34px;
+	color: #119c51;
+}
+
+.text {
+	font-size: 18px;
+	line-height: 21px;
+	color: #202020;
+	margin-right: 10px;
+}
+
+.achive button {
+	width: 25px;
+	height: 25px;
+	border: none;
+	color: #fff;
+	text-align: center;
+	background: #119c51;
+	border-radius: 1.5px;
+	outline: none;
+	cursor: pointer;
+}
+
+.cont {
+	background: #fff;
+	padding: 20px;
+}
+
+.text {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: #202020;
+}
