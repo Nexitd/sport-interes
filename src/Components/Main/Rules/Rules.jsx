@@ -1,5 +1,5 @@
 import React from "react";
-import RuleCard from "./RuleCard/RuleCard";
+import { Card, Col, Row } from "antd";
 import s from "./Rules.module.css";
 
 const RulesCard = [
@@ -8,19 +8,16 @@ const RulesCard = [
     icon: "/assets/images/Main/MainBody/Rules/analytics (2) 1.svg",
     text: "Оцени статистику",
   },
-
   {
     id: 1,
     icon: "/assets/images/Main/MainBody/Rules/Group.svg",
     text: "Сделай прогноз",
   },
-
   {
     id: 2,
     icon: "/assets/images/Main/MainBody/Rules/soccer-gear 1.svg",
     text: " Следи за матчем в режиме онлайн",
   },
-
   {
     id: 3,
     icon: "/assets/images/Main/MainBody/Rules/business-and-finance 10.svg",
@@ -31,13 +28,17 @@ const RulesCard = [
 const Rules = () => {
   return (
     <div className={s.rules}>
-      <h2 className={s.rules__title}> Правила </h2>
-
-      <div className={s.cards}>
+      <h2 className={s.rules__title}>Правила</h2>
+      <Row gutter={[10, 0]}>
         {RulesCard.map((card) => (
-          <RuleCard icon={card.icon} text={card.text} key={card.id}/>
+          <Col span={6} key={card.id}>
+            <Card className={s.card} hoverable>
+              <img src={card.icon} alt="" />
+              <p className={s.card__text}>{card.text}</p>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 };

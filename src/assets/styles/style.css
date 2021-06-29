@@ -1,0 +1,38 @@
+.football {
+  color: #119c51;
+}
+
+.hockey {
+  color: #1779c0;
+}
+
+.basketball {
+  color: #ff5f23;
+}
+
+.football_bg {
+  background-color: #119c51;
+}
+
+.hockey_bg {
+  background-color: #1779c0;
+}
+
+.basketball_bg {
+  background-color: #ff5f23;
+}
+
+.football_border {
+  border: 2px solid #119c51;
+  border-radius: 5px;
+}
+
+.hockey_border {
+  border: 2px solid #1779c0;
+  border-radius: 5px;
+}
+
+.basketball_border {
+  border: 2px solid #ff5f23;
+  border-radius: 5px;
+}

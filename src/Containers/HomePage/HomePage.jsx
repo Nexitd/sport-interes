@@ -1,13 +1,8 @@
-import React from 'react';
+import React from "react";
 import Main from "../../Components/Main/Main";
 
-
 const HomePage = () => {
-  return (
-      <div className='wrapper'>
-          <Main />
-      </div>
-  );
-}
+  return <Main />;
+};
 
 export default HomePage;

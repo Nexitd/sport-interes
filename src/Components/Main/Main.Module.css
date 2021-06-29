@@ -1,26 +1,19 @@
-.main {
-    width: 100%;
-    background: url('/src/assets/images/Main/MainHeaderBg/MainBg.jpg') 100% 100% no-repeat;
-    background-size: cover;
-    height: 50vh;
-}
-
 .main__body {
-    background-color: #F4F4F4;
+  background-color: #f4f4f4;
 }
 
 .main__container {
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .content {
-    width: 70%;
-    margin-right: 15px;
+  width: 70%;
+  margin-right: 15px;
 }
 
 .table {
-    width: 30%;
+  width: 30%;
 }

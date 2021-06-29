@@ -1,7 +1,3 @@
-import football from "../../assets/images/TableScore/Group.svg";
-import hock from "../../assets/images/TableScore/Group 9.svg";
-import basketball from "../../assets/images/TableScore/Group 176.svg";
-
 export const col = [
   {
     title: "Имя пользователя",
@@ -9,17 +5,17 @@ export const col = [
     key: "name",
   },
   {
-    title: <img src={football} alt="" />,
+    title: "+5",
     dataIndex: "footScore",
     key: "footScore",
   },
   {
-    title: <img src={hock} alt="" />,
+    title: "+3",
     dataIndex: "footScore",
     key: "footScore",
   },
   {
-    title: <img src={basketball} alt="" />,
+    title: "+1",
     dataIndex: "footScore",
     key: "footScore",
   },
