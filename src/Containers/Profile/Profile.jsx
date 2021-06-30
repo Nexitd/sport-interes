@@ -7,7 +7,7 @@ import routes from "../../routing/routes";
 import ProfileInfo from "../../Components/Profile/Profile";
 import Settings from "./Settings/Settings";
 import Cash from "../WithdrawalCash/Cash";
-import Rooms from '../Rooms/Rooms'
+import Rooms from "../Rooms/Rooms";
 import Add from "../../Components/Add/Add";
 import s from "./Profile.module.css";
 
@@ -21,7 +21,7 @@ const Profile = () => {
   return (
     <div className="content">
       <Row justify="center" gutter={[10, 30]}>
-        <Col span={18} >
+        <Col span={18}>
           <Tabs
             tabBarGutter={0}
             className={s.tabs}
