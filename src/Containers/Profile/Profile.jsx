@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { Col, Row, Tabs } from "antd";
 import routes from "../../routing/routes";
 import ProfileInfo from "../../Components/Profile/Profile";
-import Settings from '../Settings/Settings'
-import Cash from '../WithdrawalCash/Cash'
+import Settings from "./Settings/Settings";
+import Cash from "../WithdrawalCash/Cash";
 import s from "./Profile.module.css";
 
 const Profile = () => {

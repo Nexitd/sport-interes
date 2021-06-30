@@ -1,53 +1,22 @@
 .prises {
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 61px 0 74px;
+  padding: 40px 0 30px;
 }
 
 .title {
-	font-weight: bold;
-	font-size: 32px;
-	line-height: 38px;
-	color: #119c51;
-	margin-bottom: 40px;
-}
-
-.prices__container {
-	padding: 0 32px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  color: #119c51;
+  margin-bottom: 40px;
 }
 
 .prise__item {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.prise__item:first-of-type {
-	width: 30%;
-}
-
-.prise__item {
-    width: 17%;
-}
-
-.prise__item img {
-	max-width: 100px;
-	object-fit: cover;
-}
-
-.prise__item:first-of-type img:nth-child(2){
-	margin: 0 27px;
+  text-align: center;
 }
 
 .prise__text {
-    max-width: 436px;
-    margin-top: 14px;
-	font-size: 13px;
-	line-height: 16px;
-	text-align: center;
-	color: #202020;
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 16px;
+  color: #202020;
 }

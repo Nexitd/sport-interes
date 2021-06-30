@@ -22,7 +22,7 @@ const Info = [
 ];
 
 const Points = () => (
-  <div className={s.points}>
+  <>
     <h2 className={s.points__title}>Начисление очков</h2>
     <Row gutter={[10, 0]}>
       {Info.map((card) => (
@@ -38,7 +38,7 @@ const Points = () => (
         </Col>
       ))}
     </Row>
-  </div>
+  </>
 );
 
 export default Points;

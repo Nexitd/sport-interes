@@ -27,7 +27,7 @@ const RulesCard = [
 
 const Rules = () => {
   return (
-    <div className={s.rules}>
+    <>
       <h2 className={s.rules__title}>Правила</h2>
       <Row gutter={[10, 0]}>
         {RulesCard.map((card) => (
@@ -39,7 +39,7 @@ const Rules = () => {
           </Col>
         ))}
       </Row>
-    </div>
+    </>
   );
 };
 

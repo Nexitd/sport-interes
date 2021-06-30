@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-import { Card } from "antd";
+import { Card, Col, Row } from "antd";
 import routes from "../../../routing/routes";
 import s from "./MainTournir.module.css";
 
@@ -30,28 +30,30 @@ const TournirCards = [
 ];
 
 const MainTournir = () => (
-  <div className={s.cards}>
+  <Row gutter={[10, 10]}>
     {TournirCards.map((card) => (
-      <Link to={routes[card.color]} className={s.card} key={card.id}>
-        <Card
-          hoverable
-          style={{ width: "100%", borderRadius: 5 }}
-          cover={<img alt="" src={card.background} />}
-        >
-          <Card.Meta
-            description={
-              <div className={s.card__footer}>
-                <span className={classNames([[card.color], s.text])}>
-                  {card.name}
-                </span>
-                <img src={card.icon} alt="" />
-              </div>
-            }
-          />
-        </Card>
-      </Link>
+      <Col xl={8} key={card.id}>
+        <Link to={routes[card.color]} className={s.card}>
+          <Card
+            hoverable
+            style={{ borderRadius: 5 }}
+            cover={<img alt="" src={card.background} />}
+          >
+            <Card.Meta
+              description={
+                <div className={s.card__footer}>
+                  <span className={classNames([[card.color], s.text])}>
+                    {card.name}
+                  </span>
+                  <img src={card.icon} alt="" />
+                </div>
+              }
+            />
+          </Card>
+        </Link>
+      </Col>
     ))}
-  </div>
+  </Row>
 );
 
 export default MainTournir;

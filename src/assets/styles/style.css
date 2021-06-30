@@ -36,3 +36,9 @@
   border: 2px solid #ff5f23;
   border-radius: 5px;
 }
+
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 0;
+}

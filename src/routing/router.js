@@ -14,7 +14,7 @@ import HomePage from "../Containers/HomePage";
 import Header from "../Containers/Header";
 import Tournir from "../Containers/Tournir";
 import Profile from "../Containers/Profile";
-import Footer from '../Components/Footer/Footer'
+import Footer from "../Containers/Footer/Footer";
 
 const antIcon = (
   <LoadingOutlined
@@ -77,7 +77,7 @@ const Routers = () => {
           <Switch>
             <div
               style={{
-                minHeight: "calc(100vh - 83px)",
+                flexGrow: 1,
                 backgroundColor: "#f4f4f4",
               }}
             >

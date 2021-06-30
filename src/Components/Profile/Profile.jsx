@@ -9,14 +9,14 @@ import Tours from "../Tours/Tours";
 const Profile = () => {
   return (
     <div>
-      <Row gutter={[48, 24]} style={{width: '100%'}}>
-          <ProfileInfo />
-          <Achivements />
-		  <Statistic />
-		  <Forecast />
-		  <Tours title='29-й тур' />  
-		  <Tours title='30-й тур'/>  
-	  </Row>
+      <Row gutter={[48, 24]}>
+        <ProfileInfo />
+        <Achivements />
+        <Statistic />
+        <Forecast />
+        <Tours title="29-й тур" />
+        <Tours title="30-й тур" />
+      </Row>
     </div>
   );
 };

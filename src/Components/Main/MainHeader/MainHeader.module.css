@@ -1,14 +1,18 @@
 .main__header {
+  background: url("/src/assets/images/Main/MainHeaderBg/MainBg.jpg") 100% 100%
+    no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
+.content {
   max-width: 1440px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: url("/src/assets/images/Main/MainHeaderBg/MainBg.jpg") 100% 100%
-    no-repeat;
-  background-size: cover;
-  height: 50vh;
 }
 
 .title {

@@ -39,7 +39,7 @@ export const TurInfo = [
 
 const Tournir = ({ type }) => {
   return (
-    <div style={{ maxWidth: 1440, margin: "0 auto", padding: "20px" }}>
+    <div className="content">
       <Breadcrumb>
         <Breadcrumb.Item>
           <Link to={routes.main}>Главная</Link>
@@ -65,12 +65,13 @@ const Tournir = ({ type }) => {
         <Col span={18}>
           <Row gutter={15}>
             <Col span={8}>
-              <div
-                className={classNames([`${type}_border`, s.block])}
-                style={{ color: "black" }}
+              <Card
+                hoverable
+                size="small"
+                className={classNames([`${type}_border`, s.blockCard])}
               >
                 Следите за другими видами спорта
-              </div>
+              </Card>
             </Col>
             {Object.keys(sportTypes).map(
               (butt) =>
@@ -79,6 +80,7 @@ const Tournir = ({ type }) => {
                     <Link to={butt}>
                       <Card
                         hoverable
+                        size="small"
                         className={classNames([`${butt}_bg`, s.block])}
                       >
                         {sportTypes[butt]}
