@@ -9,15 +9,17 @@ const GetMoney = () => {
                  Для вывода средст необходимо указать сумму вывода.
                 Средства будут отправлены на карту “Сбербанка”, прикрепленную к номеру,  который Вы указали при регистрации.
             </p>
-            <Input placeholder='Сумма вывода, руб.'/>
-            <div className={s.section}>
-                <input id='check' type="checkbox" />
-                <label htmlFor="check">
-                    Я согласен с условиями вывода средства 
-                    и обработку личных данных.
-                </label>
+            <div className={s.wrapper}>
+                <Input placeholder='Сумма вывода, руб.'/>
+                <div className={s.section}>
+                    <input id='check' type="checkbox" />
+                    <label htmlFor="check" className={s.check}>
+                        Я согласен с условиями вывода средства 
+                        и обработку личных данных.
+                    </label>
+                </div>
+                <Button hoverble shape='round'>Вывести</Button>
             </div>
-            <Button hoverble shape='round'>Вывести</Button>
         </div>
     )
 }

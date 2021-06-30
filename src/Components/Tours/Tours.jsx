@@ -63,7 +63,7 @@ const TourInfo = [
 
 const Tours = ({ title, timestamp = TourInfo.time }) => {
     return (
-        <div>
+        <Col span={24}>
             <h3 className={s.title}>{title}</h3>
             <Row gutter={[0, 10]}>
                 {TourInfo.map(info => (
@@ -95,7 +95,7 @@ const Tours = ({ title, timestamp = TourInfo.time }) => {
                     </Col>
                 ))} 
             </Row>
-        </div>
+        </Col>
     )
 }
 

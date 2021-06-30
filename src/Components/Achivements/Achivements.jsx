@@ -38,7 +38,7 @@ const Achivements = () => {
     return (
         <Col span={24}>
             <div className={s.slider}>
-              <Row justify="space-between" align="middle" gutter={[12]} >
+              <Row justify="space-between" align="middle" >
                 <h2 className={s.title}>Достижения</h2>
                 <div className={s.achive}>
                   <span className={s.text}>Победитель туров</span>
@@ -46,19 +46,19 @@ const Achivements = () => {
                 </div>
               </Row>
               <div className={s.slider}>
-				  <Row justify="center" align="middle" className={s.cont} >
-						{infoSlider.map(info => 
-							<Col span={4} align="middle">
-								<div className={s.item}>
-									{info.img}
-									<p className={s.text}>{info.text}</p>
-								</div>
-							</Col>
-						)}
-				  </Row>
+				        <Row justify="center" align="middle" className={s.cont} >
+						      {infoSlider.map(info => 
+							      <Col span={4} align="middle">
+								      <div className={s.item}>
+									      {info.img}
+									      <p className={s.text}>{info.text}</p>
+								      </div>
+							      </Col>
+					        )}
+				        </Row>
               </div>
-            </div>
-          </Col>
+          </div>
+      </Col>
     )
 }
 

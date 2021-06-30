@@ -15,6 +15,7 @@ import Header from "../Containers/Header";
 import Tournir from "../Containers/Tournir";
 import Profile from "../Containers/Profile";
 import Footer from "../Containers/Footer/Footer";
+import Rooms from "../Containers/Rooms/Rooms";
 
 const antIcon = (
   <LoadingOutlined
@@ -46,6 +47,10 @@ const componentRoute = [
   {
     path: routes.profile,
     component: <Profile />,
+  },
+  {
+    path: routes.rooms,
+    component: <Rooms />,
   },
 ];
 

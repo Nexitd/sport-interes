@@ -9,7 +9,7 @@ import Tours from "../Tours/Tours";
 const Profile = () => {
   return (
     <div>
-      <Row gutter={[48, 24]}>
+      <Row gutter={[10, 30]}>
         <ProfileInfo />
         <Achivements />
         <Statistic />

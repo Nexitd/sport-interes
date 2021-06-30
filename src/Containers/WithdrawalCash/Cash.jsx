@@ -1,8 +1,8 @@
 import React from 'react'
+import { Col, Row } from 'antd'
 import Balance from '../../Components/Balance/Balance'
 import GetMoney from '../../Components/GetMoney/GetMoney'
-import { Col, Row } from 'antd'
-
+import History from '../../Components/OperationHistory/History.jsx'
 
 const Cash = () => {
     return (
@@ -13,6 +13,9 @@ const Cash = () => {
                 </Col>
                 <Col span={24}>
                     <GetMoney />
+                </Col>
+                <Col span={24}>
+                    <History />
                 </Col>
             </Row>
         </div>

@@ -42,3 +42,10 @@
   margin: 0 auto;
   padding: 30px 0;
 }
+
+.title {
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 34px;
+	color: #119c51;
+}
