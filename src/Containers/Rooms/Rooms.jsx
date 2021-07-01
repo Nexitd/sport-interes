@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Tabs } from "antd";
 import MyRooms from "./MyRooms/MyRooms";
 import Invites from "./Invites/Invites";
+import CreateRoom from "./CreateRoom/CreateRoom";
 import s from "./Rooms.module.css";
 import Add from "../../Components/Add/Add";
 
@@ -10,6 +11,7 @@ const Rooms = () => {
     <div className="content">
       <Row justify="center" gutter={[10, 30]}>
         <Col span={18}>
+          <h2 className="title">Комнаты</h2>
           <Tabs
             tabBarGutter={0}
             className={s.tabs}
@@ -24,7 +26,9 @@ const Rooms = () => {
             <Tabs.TabPane tab="Мои приглашения" key="3">
               <Invites />
             </Tabs.TabPane>
-            <Tabs.TabPane tab="Создать комнату" key="4"></Tabs.TabPane>
+            <Tabs.TabPane tab="Создать комнату" key="4">
+              <CreateRoom />
+            </Tabs.TabPane>
           </Tabs>
         </Col>
         <Col span={6}>

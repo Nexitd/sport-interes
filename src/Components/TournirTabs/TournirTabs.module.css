@@ -1,0 +1,34 @@
+.title {
+	font-size: 18px;
+	line-height: 21px;
+	color: #515151;
+}
+
+.tab {
+    padding: 15px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.tab:nth-child(2) {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.tab:nth-child(5) {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.tab:nth-child(2), .tab:nth-child(1), .tab:nth-child(3) {
+    border-bottom: 1px solid #000;
+}

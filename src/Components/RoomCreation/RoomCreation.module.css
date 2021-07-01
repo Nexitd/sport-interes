@@ -1,0 +1,18 @@
+.card {
+	padding: 30px;
+	background-color: #fff;
+}
+
+.room__name {
+	height: 45px;
+	border-radius: 40px !important;
+    margin-bottom: 20px;
+}
+
+.text {
+    margin-top: 20px;
+    margin-bottom: 0;
+	font-size: 12px;
+	line-height: 14px;
+	color: #000000;
+}

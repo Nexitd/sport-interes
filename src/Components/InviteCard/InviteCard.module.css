@@ -16,11 +16,16 @@
 	color: #656565;
 }
 
+.cont {
+	text-align: center;
+}
+
 .card p {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 19px;
 	color: #202020;
+	margin-bottom: 0;
 }
 
 .name {

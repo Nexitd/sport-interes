@@ -1,0 +1,21 @@
+.card {
+	display: inline-block;
+	border: 1px solid #119c51;
+	border-radius: 40px;
+	padding: 5px;
+	margin: 10px 10px 10px 0;
+}
+
+.member {
+	font-size: 14px;
+	line-height: 17px;
+	color: #202020;
+}
+
+.card button {
+	display: inline-block;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	margin-left: 15px;
+}
