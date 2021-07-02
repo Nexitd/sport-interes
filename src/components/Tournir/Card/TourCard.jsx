@@ -1,5 +1,5 @@
 import React from "react";
-import { getDate } from "../../../Utils/Date";
+import { getDate } from "../../../utils/Date";
 import s from "./TourCard.module.css";
 
 const TourCard = ({ item }) => {

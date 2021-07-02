@@ -7,6 +7,8 @@ const routes = {
   football: "/football",
   hockey: "/hockey",
   basketball: "/basketball",
+  tournir: "/tournir/:id",
+  cup: "/cup/:id",
 };
 
 export default routes;

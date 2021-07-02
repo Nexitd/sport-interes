@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button, Space } from "antd";
 import routes from "../../routing/routes";
-import { getDate } from "../../Utils/Date";
+import { getDate } from "../../utils/Date";
 import ModalCustom from "../../Components/Modal/ModalCustom";
 import logo from "../../assets/images/Header/logo_sport 1.svg";
 import s from "./Header.module.css";

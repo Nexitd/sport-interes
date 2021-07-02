@@ -2,7 +2,7 @@ import React from "react";
 import { Row } from "antd";
 import edit from "../../../assets/images/RoomCard/edit 9.svg";
 import inf from "../../../assets/images/RoomCard/Group 490.svg";
-import RoomCard from "../../../Components/RoomCard/RoomCard";
+import RoomCard from "../../../components/RoomCard/RoomCard";
 
 const RoomInfo = [
   {

@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Tabs } from "antd";
-import MyRooms from "./MyRooms/MyRooms";
-import Invites from "./Invites/Invites";
 import CreateRoom from "./CreateRoom/CreateRoom";
 import s from "./Rooms.module.css";
-import Add from "../../Components/Add/Add";
+import Add from "../../components/Add/Add";
+import MyRooms from "./MyRooms/MyRooms";
+import Invites from "./Invites/Invites";
 
 const Rooms = () => {
   return (
