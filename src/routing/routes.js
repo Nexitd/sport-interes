@@ -1,6 +1,7 @@
 const routes = {
   profile: "/profile",
   rooms: "/rooms",
+  turnir: "/turnir",
   main: "/",
   login: "/login",
   registration: "/registration",

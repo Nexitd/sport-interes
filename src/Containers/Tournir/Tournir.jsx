@@ -53,9 +53,11 @@ const Tournir = ({ type }) => {
         <Col span={18}>
           <Row gutter={10}>
             {TurInfo.map((item) => (
-              <Col span={12}>
-                <TourCard item={item} key={item.id} />
-              </Col>
+                <Col span={12}>
+                  <Link to='/turnir'>
+                    <TourCard item={item} key={item.id} />
+                  </Link>
+                </Col>
             ))}
           </Row>
         </Col>

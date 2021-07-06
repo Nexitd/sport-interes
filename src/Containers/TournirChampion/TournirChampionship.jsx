@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col, Tabs } from 'antd'
 import Add from '../../Components/Add/Add'
 import Tournir from './Tournir/Tournir'
+import Timetable from './Timetable/Timetable'
 import s from './Tournir.module.css'
 
 
@@ -23,7 +24,7 @@ const TournirChampionship = () => {
                         <Tournir />
                     </Tabs.TabPane>
                     <Tabs.TabPane tab="Расписание" key="3">
-                    
+                        <Timetable />
                     </Tabs.TabPane>
                     <Tabs.TabPane tab="Результаты" key="4">
                     

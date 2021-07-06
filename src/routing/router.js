@@ -54,7 +54,7 @@ const componentRoute = [
     component: <Rooms />,
   },
   {
-    path: routes.tournir,
+    path: routes.turnir,
     component: <TournirChampionship />,
   },
 ];

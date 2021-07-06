@@ -61,7 +61,7 @@ const TourInfo = [
     }
 ];
 
-const Tours = ({ title, timestamp = TourInfo.time }) => {
+const Tours = ({ title, timestamp = TourInfo.time, firstScore = '', secondScore = '', point, ...rest}) => {
     return (
         <Col span={24}>
             <h3 className={s.title}>{title}</h3>
@@ -81,15 +81,18 @@ const Tours = ({ title, timestamp = TourInfo.time }) => {
                             <div className={s.comands}>
                                 <p className={s.command__name}>{info.firstComand}</p>
                                 {info.firstImg}
+                                <input type="text" value={firstScore} className={s.tour__score} disabled/>
+                                <input type="text" value={secondScore} className={s.tour__score} disabled/>
                                 {info.secondImg}
                                 <p className={s.command__name}>{info.secondComand}</p>
                             </div>
                             <div className={s.score}>
-                                <input type="text" value={info.firstScore} className={s.tour__score} disabled/>
-                                <input type="text" value={info.secondScore} className={s.tour__score} disabled/>
+                                {rest.predictionScore1}
+                                {rest.predictionScore2}
+                                {rest.predict}
                             </div>
                             <div className={s.points}>
-                                <span className={s.tour__point}>{info.point}</span>
+                                <span className={s.tour__point}>{point}</span>
                             </div>
                         </Card>
                     </Col>
