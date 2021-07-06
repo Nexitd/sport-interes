@@ -4,6 +4,7 @@ import Add from '../../Components/Add/Add'
 import Tournir from './Tournir/Tournir'
 import Timetable from './Timetable/Timetable'
 import s from './Tournir.module.css'
+import Results from './Results/Results'
 
 
 const TournirChampionship = () => {
@@ -27,7 +28,7 @@ const TournirChampionship = () => {
                         <Timetable />
                     </Tabs.TabPane>
                     <Tabs.TabPane tab="Результаты" key="4">
-                    
+                        <Results />
                     </Tabs.TabPane>
                 </Tabs>
             </Col>
