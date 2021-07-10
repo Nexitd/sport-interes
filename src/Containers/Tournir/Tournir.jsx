@@ -48,12 +48,12 @@ const Tournir = ({ type }) => {
           <Link>{sportTypes[type]}</Link>
         </Breadcrumb.Item>
       </Breadcrumb>
-      <h1>{sportTypes[type]}</h1>
-      <Row gutter={[10, 0]}>
+      <h1 className={s.title}>{sportTypes[type]}</h1>
+      <Row gutter={[10, 10]} className={s.blockCenter}>
         <Col span={18}>
           <Row gutter={10}>
             {TurInfo.map((item) => (
-                <Col span={12}>
+                <Col span={12} xs={24} lg={12}>
                   <Link to='/turnir'>
                     <TourCard item={item} key={item.id} />
                   </Link>
@@ -61,12 +61,12 @@ const Tournir = ({ type }) => {
             ))}
           </Row>
         </Col>
-        <Col span={6}>
+        <Col span={6} xs={24} lg={6}>
           <TableScore columns={col} />
         </Col>
         <Col span={18}>
-          <Row gutter={15}>
-            <Col span={8}>
+          <Row gutter={[15, 15]}>
+            <Col span={8} xs={24} lg={8}>
               <Card
                 hoverable
                 size="small"
@@ -78,7 +78,7 @@ const Tournir = ({ type }) => {
             {Object.keys(sportTypes).map(
               (butt) =>
                 butt !== type && (
-                  <Col span={8}>
+                  <Col span={8} xs={24} lg={8}>
                     <Link to={butt}>
                       <Card
                         hoverable

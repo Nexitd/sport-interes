@@ -31,3 +31,17 @@
   line-height: 24px;
   color: #fff;
 }
+
+@media (max-width:480px) {
+  .title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .main__header_text {
+    font-size: 14px;
+    text-align: center;
+  }
+
+}
+

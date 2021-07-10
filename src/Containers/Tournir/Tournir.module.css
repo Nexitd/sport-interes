@@ -9,3 +9,14 @@
 .blockCard {
   text-align: center;
 }
+
+
+@media (max-width:480px) {
+  .blockCenter {
+      justify-content: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+}

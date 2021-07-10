@@ -20,3 +20,15 @@
   line-height: 16px;
   color: #202020;
 }
+
+
+@media (max-width:480px) {
+  .title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .prise__text {
+    font-size: 14px;
+  }
+}

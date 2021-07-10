@@ -59,3 +59,17 @@
 .modal__acc span {
     color: #119C51;
 }
+
+@media (max-width:480px) {
+    input {
+        width: 100% !important;
+    }
+
+    button {
+        width: 100% !important;
+    }
+
+    .modal__acc {
+        text-align: center;
+    }
+}

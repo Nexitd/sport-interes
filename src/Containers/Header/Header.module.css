@@ -19,3 +19,17 @@
   justify-content: space-between;
   width: 70%;
 }
+
+@media (max-width: 480px) {
+  .item:first-child {
+    width: auto;
+  }
+
+  .header__container {
+    flex-direction: column;
+  }
+
+  .header__container span {
+    display: none;
+  }
+}

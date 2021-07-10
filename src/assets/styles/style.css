@@ -49,3 +49,10 @@
 	line-height: 34px;
 	color: #119c51;
 }
+
+
+@media (max-width:480px) {
+  .content > .ant-row{
+    margin: 0 !important;
+  }
+}

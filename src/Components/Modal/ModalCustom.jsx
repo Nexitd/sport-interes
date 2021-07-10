@@ -55,7 +55,7 @@ const ModalCustom = ({ visible, type, ...rest }) => {
     };
 
     return (
-        <Modal visible={visible} {...rest}>
+        <Modal visible={visible} {...rest} footer={null}> 
             {content()}
         </Modal>
     );

@@ -19,3 +19,10 @@
   line-height: 30px;
   color: #202020;
 }
+
+
+@media (max-width:480px) {
+  .footerContent .img_center {
+    text-align: center;
+  }
+}

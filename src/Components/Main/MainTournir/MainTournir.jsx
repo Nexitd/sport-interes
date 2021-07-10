@@ -30,7 +30,7 @@ const TournirCards = [
 ];
 
 const MainTournir = () => (
-  <Row gutter={[10, 10]}>
+  <Row gutter={[10, 10]} justify="center">
     {TournirCards.map((card) => (
       <Col xl={8} key={card.id}>
         <Link to={routes[card.color]} className={s.card}>

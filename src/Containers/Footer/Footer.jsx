@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <div className={s.footerContent}>
       <Row className="content">
-        <Col xl={6}>
+        <Col xl={6} className={s.img_center}>
           <Link to={routes.main}>
             <img src="/assets/images/Header/logo_sport 1.svg" alt="" />
           </Link>

@@ -24,9 +24,9 @@ const Info = [
 const Points = () => (
   <>
     <h2 className={s.points__title}>Начисление очков</h2>
-    <Row gutter={[10, 0]}>
+    <Row gutter={[10, 10]}>
       {Info.map((card) => (
-        <Col span={8} key={card.id}>
+        <Col span={8} key={card.id} xs={24} lg={8}>
           <div className={s.card__section}>
             <span className={classNames([s.card__text, s.count])}>
               {card.count}

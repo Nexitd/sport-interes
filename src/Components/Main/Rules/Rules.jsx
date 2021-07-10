@@ -29,9 +29,9 @@ const Rules = () => {
   return (
     <>
       <h2 className={s.rules__title}>Правила</h2>
-      <Row gutter={[10, 0]}>
+      <Row gutter={[10, 10]}>
         {RulesCard.map((card) => (
-          <Col span={6} key={card.id}>
+          <Col span={6} key={card.id} xs={24} lg={6}>
             <Card className={s.card} hoverable>
               <img src={card.icon} alt="" />
               <p className={s.card__text}>{card.text}</p>
