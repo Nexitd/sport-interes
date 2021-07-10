@@ -72,4 +72,8 @@
     .modal__acc {
         text-align: center;
     }
+
+    .modal__text {
+        text-align: center;
+    }
 }
