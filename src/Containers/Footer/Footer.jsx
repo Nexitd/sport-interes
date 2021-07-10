@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <div className={s.footerContent}>
       <Row className="content">
-        <Col xl={6} className={s.img_center}>
+        <Col xl={6} className={s.img_center} xs={24}>
           <Link to={routes.main}>
             <img src="/assets/images/Header/logo_sport 1.svg" alt="" />
           </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
           <img src="/assets/images/Footer/image-302.png" alt="" />
           <p className={s.text}>© 2020 Прогнозы на спорт</p>
         </Col>
-        <Col xl={6}>
+        <Col xl={6} xs={24}>
           <h3 className={s.title}>Спортивный интерес</h3>
           <ul>
             {textSortConstants.map((text, index) => (
@@ -42,7 +42,7 @@ const Footer = () => {
             ))}
           </ul>
         </Col>
-        <Col xl={6}>
+        <Col xl={6} xs={24}>
           <h3 className={s.title}>Прогнозы</h3>
           <ul>
             {forecastsConstants.map((text, index) => (
@@ -52,7 +52,7 @@ const Footer = () => {
             ))}
           </ul>
         </Col>
-        <Col xl={6}>
+        <Col xl={6} xs={24}>
           <h3 className={s.title}>Мы в социальных сетях</h3>
           <img src="/assets/images/Footer/Group 735.svg" alt="" />
           <img src="/assets/images/Footer/Group 736.svg" alt="" />

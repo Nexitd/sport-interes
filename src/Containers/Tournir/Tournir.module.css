@@ -19,4 +19,8 @@
   .title {
     text-align: center;
   }
+
+  .blockLeft {
+    margin-left: 30px !important;
+  }
 }
