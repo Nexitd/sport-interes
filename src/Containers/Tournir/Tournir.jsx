@@ -40,7 +40,7 @@ export const TurInfo = [
 const Tournir = ({ type }) => {
   return (
     <div className="content">
-      <Breadcrumb>
+      <Breadcrumb className={s.blockLeft}>
         <Breadcrumb.Item>
           <Link to={routes.main}>Главная</Link>
         </Breadcrumb.Item>
