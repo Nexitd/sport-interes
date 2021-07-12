@@ -8,6 +8,11 @@ const routes = {
   football: "/football",
   hockey: "/hockey",
   basketball: "/basketball",
+  matches: "/matches",
+  now: "/now",
+  future: "/future",
+  past: "/past"
+
 };
 
 export default routes;

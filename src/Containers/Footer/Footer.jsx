@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <div className={s.footerContent}>
       <Row className="content">
-        <Col xl={6} className={s.img_center}>
+        <Col xl={6} className={s.img_center} order='1'>
           <Link to={routes.main}>
             <img src="/assets/images/Header/logo_sport 1.svg" alt="" />
           </Link>
@@ -52,7 +52,7 @@ const Footer = () => {
             ))}
           </ul>
         </Col>
-        <Col xl={6}>
+        <Col xl={6} order='1'>
           <h3 className={s.title}>Мы в социальных сетях</h3>
           <img src="/assets/images/Footer/Group 735.svg" alt="" />
           <img src="/assets/images/Footer/Group 736.svg" alt="" />

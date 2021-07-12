@@ -51,6 +51,10 @@
 }
 
 
+.content > .ant-row{
+  margin: 0 !important;
+}
+
 @media (max-width:480px) {
   .content > .ant-row{
     margin: 0 !important;

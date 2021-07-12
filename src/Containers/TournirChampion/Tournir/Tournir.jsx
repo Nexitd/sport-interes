@@ -148,6 +148,7 @@ const Tournir = () => {
             firstScore='-'
             secondScore='-'
             point='-'
+            match='/matches'
             predictionScore1={ToursInfo[0].predictionScore1}
             predictionScore2={ToursInfo[0].predictionScore2}
             predict={ToursInfo[0].predictBtn}
