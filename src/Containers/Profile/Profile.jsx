@@ -7,7 +7,6 @@ import routes from "../../routing/routes";
 import ProfileInfo from "../../Components/Profile/Profile";
 import Settings from "./Settings/Settings";
 import Cash from "../WithdrawalCash/Cash";
-import Rooms from "../Rooms/Rooms";
 import Add from "../../Components/Add/Add";
 import s from "./Profile.module.css";
 

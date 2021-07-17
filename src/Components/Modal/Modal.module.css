@@ -1,79 +1,79 @@
 .modal {
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal__text {
-	font-size: 18px;
-	line-height: 21px;
-	color: #202020;
+  font-size: 18px;
+  line-height: 21px;
+  color: #202020;
 }
 
 .modal input {
-	width: 400px;
-	height: 55px;
-	border: 1px solid #cacaca;
-	border-radius: 40px;
-    margin-bottom: 10px;
-    padding: 10px;
-    box-sizing: border-box;
+  width: 400px;
+  height: 55px;
+  border: 1px solid #cacaca;
+  border-radius: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .modal button {
-    width: 400px;
-    height: 55px;
-    border-radius: 40px;
-    margin-bottom: 10px;
+  width: 400px;
+  height: 55px;
+  border-radius: 40px;
+  margin-bottom: 10px;
 }
 
 .modal__acc {
-    font-size: 18px;
-	line-height: 21px;
-	color: #202020;
-    cursor: pointer;
+  font-size: 18px;
+  line-height: 21px;
+  color: #202020;
+  cursor: pointer;
 }
 
 .modal__acc:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .modal__enter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .modal__enter img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.modal__enter img:first-of-type{
-    margin-right: 20px;
+.modal__enter img:first-of-type {
+  margin-right: 20px;
 }
 
 .modal__acc span {
-    color: #119C51;
+  color: #119c51;
 }
 
-@media (max-width:480px) {
-    input {
-        width: 100% !important;
-    }
+@media (max-width: 480px) {
+  input {
+    width: 100% !important;
+  }
 
-    button {
-        width: 100% !important;
-    }
+  button {
+    width: 100% !important;
+  }
 
-    .modal__acc {
-        text-align: center;
-    }
+  .modal__acc {
+    text-align: center;
+  }
 
-    .modal__text {
-        text-align: center;
-    }
+  .modal__text {
+    text-align: center;
+  }
 }

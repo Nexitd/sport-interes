@@ -2,8 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import ChampTournir from "../../../Components/ChampTournir/ChampTournir";
 import Tours from "../../../Components/Tours/Tours";
-import { ToursInfo } from '../Tours'
-import s from "./Tournir.module.css";
+import { ToursInfo } from "../Tours";
 
 const dataSource = [
   {
@@ -133,22 +132,20 @@ const columns = [
   },
 ];
 
-
-
 const Tournir = () => {
   return (
-    <div className='content'>
+    <div className="content">
       <Row gutter={[10, 30]}>
         <Col span={24}>
           <ChampTournir dataSource={dataSource} columns={columns} />
         </Col>
         <Col span={24}>
           <Tours
-            title='29-й тур'
-            firstScore='-'
-            secondScore='-'
-            point='-'
-            match='/matches'
+            title="29-й тур"
+            firstScore="-"
+            secondScore="-"
+            point="-"
+            match="/matches"
             predictionScore1={ToursInfo[0].predictionScore1}
             predictionScore2={ToursInfo[0].predictionScore2}
             predict={ToursInfo[0].predictBtn}
@@ -156,10 +153,10 @@ const Tournir = () => {
         </Col>
         <Col span={24}>
           <Tours
-            title='29-й тур'
-            firstScore='-'
-            secondScore='-'
-            point='-'
+            title="29-й тур"
+            firstScore="-"
+            secondScore="-"
+            point="-"
             predictionScore1={ToursInfo[0].predictionScore1}
             predictionScore2={ToursInfo[0].predictionScore2}
           />
