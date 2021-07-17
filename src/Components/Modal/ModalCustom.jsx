@@ -1,8 +1,17 @@
 import React from "react";
 import { Modal, Input, Button, Form } from "antd";
 import s from "./Modal.module.css";
+import { useDispatch } from "react-redux";
+import { login, registration } from "../../store/slices/auth";
 
 const ModalEnter = () => {
+  const dispatch = useDispatch();
+
+  const log = (val) => {
+    console.log(val);
+    dispatch(login(val));
+  };
+
   return (
     <div className={s.modal}>
       <h2 className="title">Авторизация</h2>
@@ -12,11 +21,14 @@ const ModalEnter = () => {
         <img src="/assets/images/Footer/Group 736.svg" alt="" />
       </div>
       <p className={s.modal__text}>Или</p>
-      <Form>
-        <Form.Item name="email">
+      <Form onFinish={log}>
+        <Form.Item name="email" rules={[{ required: true }]}>
           <Input type="email" placeholder="E-mail" />
         </Form.Item>
-        <Form.Item name="password">
+        <Form.Item name="username" rules={[{ required: true }]}>
+          <Input placeholder="username" />
+        </Form.Item>
+        <Form.Item name="password" rules={[{ required: true }]}>
           <Input.Password placeholder="Пароль" />
         </Form.Item>
         <Button htmlType="submit">Войти</Button>
@@ -31,13 +43,20 @@ const ModalEnter = () => {
 
 const ModalRegistration = () => {
   const [form] = Form.useForm();
+  const dispatch = useDispatch();
+
+  const registr = (val) => {
+    console.log(val);
+    dispatch(registration(val));
+  };
+
   return (
     <div className={s.modal}>
       <h2 className="title" style={{ textAlign: "center" }}>
         Регистрация
       </h2>
       <p className={s.modal__text}>Станьте частью команды уже сейчас!</p>
-      <Form form={form}>
+      <Form form={form} onFinish={registr}>
         <Form.Item name="phone" rules={[{ required: true }]}>
           <Input type="tel" placeholder="Номер телефона" />
         </Form.Item>
@@ -47,7 +66,7 @@ const ModalRegistration = () => {
         <Form.Item name="email" rules={[{ required: true }]}>
           <Input type="email" placeholder="E-mail" />
         </Form.Item>
-        <Form.Item name="nick" rules={[{ required: true }]}>
+        <Form.Item name="username" rules={[{ required: true }]}>
           <Input placeholder="Никнейм" />
         </Form.Item>
         <Form.Item name="password" rules={[{ required: true }]}>
@@ -58,16 +77,14 @@ const ModalRegistration = () => {
           rules={[
             {
               required: true,
-              message: "Please confirm your password!",
+              message: "Введите повторный пароль!",
             },
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue("password") === value) {
                   return Promise.resolve();
                 }
-                return Promise.reject(
-                  new Error("The two passwords that you entered do not match!")
-                );
+                return Promise.reject(new Error("Пароли не совпадают!"));
               },
             }),
           ]}
