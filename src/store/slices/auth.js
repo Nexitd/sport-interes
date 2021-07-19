@@ -1,4 +1,7 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {
+  createAsyncThunk,
+  createSlice
+} from "@reduxjs/toolkit";
 import Fetch from "../../api/fetch";
 
 export const checkAuthorization = createAsyncThunk(
@@ -10,14 +13,15 @@ export const checkAuthorization = createAsyncThunk(
 );
 
 export const login = createAsyncThunk("auth/login", async (data) => {
-  const login = await Fetch.post("users", data);
+  const login = await Fetch.post("authentication_token", data);
+  localStorage.setItem("access_token", login.token);
   return login;
 });
 
 export const registration = createAsyncThunk(
   "auth/registration",
   async (data) => {
-    const registration = await Fetch.post("user/registration", data);
+    const registration = await Fetch.post("api/user/registration", data);
     return registration;
   }
 );
@@ -49,6 +53,8 @@ export const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const {
+  logout
+} = authSlice.actions;
 
 export default authSlice.reducer;

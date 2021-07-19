@@ -25,9 +25,6 @@ const ModalEnter = () => {
         <Form.Item name="email" rules={[{ required: true }]}>
           <Input type="email" placeholder="E-mail" />
         </Form.Item>
-        <Form.Item name="username" rules={[{ required: true }]}>
-          <Input placeholder="username" />
-        </Form.Item>
         <Form.Item name="password" rules={[{ required: true }]}>
           <Input.Password placeholder="Пароль" />
         </Form.Item>
