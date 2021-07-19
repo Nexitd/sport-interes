@@ -7,7 +7,7 @@ import Fetch from "../../api/fetch";
 export const checkAuthorization = createAsyncThunk(
   "auth/checkAuthorization",
   async () => {
-    const profile = await Fetch.get("profile");
+    const profile = await Fetch.get("api/user/me");
     return profile;
   }
 );
