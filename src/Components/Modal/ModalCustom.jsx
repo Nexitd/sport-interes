@@ -1,14 +1,14 @@
 import React from "react";
-import { Modal, Input, Button, Form } from "antd";
-import s from "./Modal.module.css";
-import { useDispatch } from "react-redux";
+import { Modal, Input, Button, Form, Typography } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import { login, registration } from "../../store/slices/auth";
+import s from "./Modal.module.css";
 
-const ModalEnter = () => {
+const ModalEnter = ({ switchType }) => {
   const dispatch = useDispatch();
+  const { errorLogin } = useSelector(state => state.auth);
 
   const log = (val) => {
-    console.log(val);
     dispatch(login(val));
   };
 
@@ -22,28 +22,28 @@ const ModalEnter = () => {
       </div>
       <p className={s.modal__text}>Или</p>
       <Form onFinish={log}>
-        <Form.Item name="email" rules={[{ required: true }]}>
+        <Form.Item name="email" validateStatus={errorLogin ? "error" : ""} rules={[{ required: true }]}>
           <Input type="email" placeholder="E-mail" />
         </Form.Item>
-        <Form.Item name="password" rules={[{ required: true }]}>
+        <Form.Item name="password" validateStatus={errorLogin ? "error" : ""} rules={[{ required: true }]}>
           <Input.Password placeholder="Пароль" />
         </Form.Item>
+        {errorLogin && <Typography.Text type="danger" className={s.errorLogin}>Неверный логин или пароль</Typography.Text>}
         <Button htmlType="submit">Войти</Button>
       </Form>
       <p className={s.modal__acc}>Забыли пароль?</p>
       <p className={s.modal__acc}>
-        Еще не зарегестрированы? <span>Регистрация</span>
+        Еще не зарегестрированы? <Button type="text" onClick={() => switchType(state => ({ ...state, type: "reg" }))}>Регистрация</Button>
       </p>
     </div>
   );
 };
 
-const ModalRegistration = () => {
+const ModalRegistration = ({ switchType }) => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
 
   const registr = (val) => {
-    console.log(val);
     dispatch(registration(val));
   };
 
@@ -90,30 +90,30 @@ const ModalRegistration = () => {
         </Form.Item>
         <Button htmlType="submit">Регистрация</Button>
       </Form>
-      <p className={s.modal__acc}>Уже есть аккаунт?</p>
+      <Button className={s.modal__acc} onClick={() => switchType(state => ({ ...state, type: "login" }))}>Уже есть аккаунт?</Button>
     </div>
   );
 };
 
 const ModalRate = () => <div>Reg</div>;
 
-const ModalCustom = ({ visible, type, ...rest }) => {
+const ModalCustom = ({ modal, switchType, ...rest }) => {
   const content = () => {
-    switch (type) {
+    switch (modal.type) {
       case "reg": {
-        return <ModalRegistration />;
+        return <ModalRegistration switchType={switchType} />;
       }
       case "rate": {
         return <ModalRate />;
       }
       default: {
-        return <ModalEnter />;
+        return <ModalEnter switchType={switchType} />;
       }
     }
   };
 
   return (
-    <Modal visible={visible} {...rest} footer={null}>
+    <Modal visible {...rest} footer={null}>
       {content()}
     </Modal>
   );

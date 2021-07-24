@@ -12,10 +12,11 @@ export const checkAuthorization = createAsyncThunk(
   }
 );
 
-export const login = createAsyncThunk("auth/login", async (data) => {
-  const login = await Fetch.post("authentication_token", data);
-  localStorage.setItem("access_token", login.token);
-  return login;
+export const login = createAsyncThunk("auth/login", async (data, { dispatch }) => {
+  const fet = await Fetch.post("authentication_token", data);
+  localStorage.setItem("access_token", fet.token);
+  dispatch(checkAuthorization());
+  return fet;
 });
 
 export const registration = createAsyncThunk(
@@ -26,35 +27,71 @@ export const registration = createAsyncThunk(
   }
 );
 
+export const avatarUpload = createAsyncThunk(
+  "auth/avatarUpload",
+  async (data) => {
+    const avatar = await Fetch.post("api/user/avatar", data, "form-data");
+    return avatar;
+  }
+)
+
 export const authSlice = createSlice({
   name: "auth",
   initialState: {
     isAuth: false,
-    loading: false,
+    initialLoading: true,
+    profile: {},
+    pendingLogin: false,
+    errorLogin: false,
+    success: false,
   },
   reducers: {
-    logout: (state) => {
-      state.isAuth = true;
+    successOff: (state) => {
+      state.success = false;
+    },
+    logoutReducer: (state) => {
+      state.isAuth = false;
+      state.profile = {};
     },
   },
   extraReducers: {
-    [checkAuthorization.fulfilled]: (state, payload) => {
+    [checkAuthorization.fulfilled]: (state, action) => {
       state.isAuth = true;
+      state.initialLoading = false;
+      state.profile = action.payload;
     },
-    [checkAuthorization.rejected]: (state, payload) => {
+    [checkAuthorization.rejected]: (state) => {
       state.isAuth = false;
+      state.initialLoading = false;
+      state.profile = {};
     },
-    [login.fulfilled]: (state, payload) => {
-      state.isAuth = true;
+    [registration.fulfilled]: (state) => {
+      state.success = true;
     },
-    [login.rejected]: (state, payload) => {
-      state.isAuth = false;
+    [login.pending]: (state) => {
+      state.errorLogin = false;
+      state.success = false;
+      state.pendingLogin = true;
     },
+    [login.fulfilled]: (state) => {
+      state.success = true;
+      state.errorLogin = false;
+      state.pendingLogin = false;
+    },
+    [login.rejected]: (state) => {
+      state.success = false;
+      state.errorLogin = true;
+      state.pendingLogin = false;
+    },
+    [avatarUpload.fulfilled]: (state, action) => {
+      state.profile = action.payload;
+    }
   },
 });
 
 export const {
-  logout
+  logoutReducer,
+  successOff
 } = authSlice.actions;
 
 export default authSlice.reducer;

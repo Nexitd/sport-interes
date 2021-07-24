@@ -6,51 +6,53 @@ const customHeaderJson = (token_name = "access_token") => ({
 
 const customHeaderFormData = (token_name = "access_token") => ({
   Authorization: `Bearer ${localStorage.getItem(token_name)}`,
-  Accept: "application/json",
 });
 
-const refresh = async (url) => {
-  const refreshToken = localStorage.getItem("refresh_token");
-  return fetch(`${process.env.REACT_APP_URL_API}${url}`, {
-    method: "post",
-    headers: customHeaderJson("refresh_token"),
-    body: JSON.stringify({ refresh_token: refreshToken }),
-  })
-    .then((response) => response.json())
-    .then((res) => res)
-    .catch((error) => error);
-};
+// const refresh = async (url) => {
+//   const refreshToken = localStorage.getItem("refresh_token");
+//   return fetch(`${process.env.REACT_APP_API}${url}`, {
+//     method: "post",
+//     headers: customHeaderJson("refresh_token"),
+//     body: JSON.stringify({ refresh_token: refreshToken }),
+//   })
+//     .then((response) => response.json())
+//     .then((res) => res)
+//     .catch((error) => error);
+// };
 
 const base = (method, url, data = {}, option = "json") => {
   const body = method !== "get" ? JSON.stringify(data) : null;
+  const test = new FormData();
+  if (option !== "json") {
+    test.append("file", data);
+  }
   return fetch(`${process.env.REACT_APP_API}${url}`, {
     method,
     headers: option === "json" ? customHeaderJson() : customHeaderFormData(),
-    body: option === "json" ? body : data,
+    body: option === "json" ? body : test,
   })
     .then(async (response) => {
       const { status } = response;
       switch (status) {
         case 401: {
           try {
-            const refreshToken = localStorage.getItem("refresh_token");
-            if (refreshToken !== "null") {
-              const newData = await refresh("shop/auth/refresh");
-              if (newData.access_token) {
-                localStorage.setItem("access_token", newData.access_token);
-                localStorage.setItem("expires_in", newData.expires_in);
-                localStorage.setItem("refresh_token", newData.refresh_token);
-                const newDataAfterRefresh = await base(method, url, data);
-                return newDataAfterRefresh;
-              }
-              if (newData.message) {
-                localStorage.removeItem("access_token");
-                localStorage.removeItem("refresh_token");
-                throw new Error("error");
-              }
-            }
-            localStorage.removeItem("access_token");
-            throw new Error("error");
+            // const refreshToken = localStorage.getItem("refresh_token");
+            // if (refreshToken !== "null") {
+            //   const newData = await refresh("shop/auth/refresh");
+            //   if (newData.access_token) {
+            //     localStorage.setItem("access_token", newData.access_token);
+            //     localStorage.setItem("expires_in", newData.expires_in);
+            //     localStorage.setItem("refresh_token", newData.refresh_token);
+            //     const newDataAfterRefresh = await base(method, url, data);
+            //     return newDataAfterRefresh;
+            //   }
+            //   if (newData.message) {
+            //     localStorage.removeItem("access_token");
+            //     localStorage.removeItem("refresh_token");
+            //     throw new Error("error");
+            //   }
+            // }
+            throw new Error();
           } catch (e) {
             throw new Error(e);
           }

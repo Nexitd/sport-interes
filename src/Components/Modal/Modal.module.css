@@ -73,3 +73,8 @@
     text-align: center;
   }
 }
+
+.errorLogin {
+  display: flex;
+  justify-content: center;
+}

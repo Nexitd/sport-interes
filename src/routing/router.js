@@ -47,14 +47,6 @@ const componentRoute = [
     component: <Tournir type="hockey" />,
   },
   {
-    path: routes.profile,
-    component: <Profile />,
-  },
-  {
-    path: routes.rooms,
-    component: <Rooms />,
-  },
-  {
     path: routes.turnir,
     component: <TournirChampionship />,
   },
@@ -65,10 +57,15 @@ const componentRoute = [
 ];
 
 const componentRoutePrivate = [
-  // {
-  // 	path: routes.profile,
-  // 	exact: true,
-  // },
+  {
+    path: routes.profile,
+    component: <Profile />,
+    exact: true,
+  },
+  {
+    path: routes.rooms,
+    component: <Rooms />,
+  },
 ];
 
 const Routers = () => {
@@ -89,13 +86,13 @@ const Routers = () => {
       >
         <Router>
           <Header />
-          <Switch>
-            <div
-              style={{
-                flexGrow: 1,
-                backgroundColor: "#f4f4f4",
-              }}
-            >
+          <div
+            style={{
+              flexGrow: 1,
+              backgroundColor: "#f4f4f4",
+            }}
+          >
+            <Switch>
               {componentRoutePrivate.map((route, index) => (
                 <PrivateRoute key={index} path={route.path} exact={route.exact}>
                   {route.component}
@@ -109,8 +106,8 @@ const Routers = () => {
               <Route>
                 <Redirect to={routes.main} />
               </Route>
-            </div>
-          </Switch>
+            </Switch>
+          </div>
           <Footer />
         </Router>
       </Suspense>

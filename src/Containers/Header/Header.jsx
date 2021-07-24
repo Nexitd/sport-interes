@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button, Space } from "antd";
+import { logoutReducer, successOff } from "../../store/slices/auth";
 import routes from "../../routing/routes";
 import { getDate } from "../../Utils/Date";
 import ModalCustom from "../../Components/Modal/ModalCustom";
@@ -9,10 +10,10 @@ import logo from "../../assets/images/Header/logo_sport 1.svg";
 import s from "./Header.module.css";
 
 const Header = () => {
-  const { isAuth } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const { isAuth, success } = useSelector((state) => state.auth);
   const [now, setTime] = useState(getDate());
-  const [modalAuth, setModalAuth] = useState(false);
-  const [modalReg, setModalReg] = useState(false);
+  const [modal, setModal] = useState({ open: false, type: "" });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -22,6 +23,18 @@ const Header = () => {
       clearInterval(timer);
     };
   }, []);
+
+  useEffect(() => {
+    if (success) {
+      setModal({ open: false, type: "" });
+      dispatch(successOff());
+    }
+  }, [success, dispatch])
+
+  const logout = () => {
+    localStorage.removeItem("access_token");
+    dispatch(logoutReducer());
+  }
 
   return (
     <div className={s.header}>
@@ -40,30 +53,25 @@ const Header = () => {
                   Личный кабинет
                 </Button>
               </Link>
-              <Button shape="round">Выйти</Button>
+              <Button shape="round" onClick={logout}>Выйти</Button>
             </Space>
           ) : (
             <Space>
               <Button
                 type="primary"
                 shape="round"
-                onClick={() => setModalAuth(true)}
+                onClick={() => setModal({ open: true, type: "login"})}
               >
                 Войти
               </Button>
-              <Button shape="round" onClick={() => setModalReg(true)}>
+              <Button shape="round" onClick={() => setModal({ open: true, type: "reg"})}>
                 Регистрация
               </Button>
             </Space>
           )}
         </div>
       </div>
-      <ModalCustom visible={modalAuth} onCancel={() => setModalAuth(false)} />
-      <ModalCustom
-        visible={modalReg}
-        onCancel={() => setModalReg(false)}
-        type="reg"
-      />
+      {modal.open && <ModalCustom modal={modal} switchType={setModal} onCancel={() => setModal({ open: false, type: ""})} />}
     </div>
   );
 };

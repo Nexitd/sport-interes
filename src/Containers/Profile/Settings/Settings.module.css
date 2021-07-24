@@ -1,55 +1,42 @@
 .settings {
-    background-color: #fff;
-    max-width: 800px;
-    margin: 20px auto 0;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 20px auto 0;
 }
 
 .settings__cont {
-    padding: 46px 0 69px;
-    max-width: 400px;
-    margin: 0 auto;
+  padding: 46px 0 69px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .title {
-	font-weight: 500;
-	font-size: 24px;
-	line-height: 28px;
-	text-align: center;
-	color: #202020;
-	margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 40px;
 }
-
-.item {
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-}
-
 
 .settings input {
-	height: 55px;
-	font-size: 18px;
-	line-height: 21px;
-	color: #202020;
-	padding: 15px;
-	border: 1px solid #cacaca;
-	box-sizing: border-box;
-	border-radius: 40px;
-    z-index: 0;
+  height: 55px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #202020;
+  padding: 15px;
+  border: 1px solid #cacaca;
+  box-sizing: border-box;
+  border-radius: 40px;
+  z-index: 0;
 }
 
-.edit{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.settings__change {
-	border-radius: 40px;
-    width: 100%;
+.edit {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }

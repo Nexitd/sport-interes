@@ -4,11 +4,11 @@ import { Redirect } from "react-router";
 import { useSelector } from "react-redux";
 import { Col, Row, Tabs } from "antd";
 import routes from "../../routing/routes";
-import ProfileInfo from "../../Components/Profile/Profile";
 import Settings from "./Settings/Settings";
 import Cash from "../WithdrawalCash/Cash";
 import Add from "../../Components/Add/Add";
 import s from "./Profile.module.css";
+import ProfileInfo from "../../Components/ProfileInfo/ProfileInfo";
 
 const Profile = () => {
   const { isAuth } = useSelector((state) => state.auth);
@@ -30,7 +30,14 @@ const Profile = () => {
             centered
           >
             <Tabs.TabPane tab="Профиль" key="1">
-              <ProfileInfo />
+              <Row gutter={[10, 30]}>
+                <ProfileInfo />
+                {/* <Achivements />
+                  <Statistic />
+                  <Forecast />
+                  <Tours title="29-й тур" />
+                  <Tours title="30-й тур" /> */}
+              </Row>
             </Tabs.TabPane>
             <Tabs.TabPane
               tab={
