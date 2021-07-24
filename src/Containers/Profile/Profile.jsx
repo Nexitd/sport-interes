@@ -9,6 +9,10 @@ import Cash from "../WithdrawalCash/Cash";
 import Add from "../../Components/Add/Add";
 import s from "./Profile.module.css";
 import ProfileInfo from "../../Components/ProfileInfo/ProfileInfo";
+import Achivements from "../../Components/Achivements/Achivements";
+import Statistic from "../../Components/Statistic/Statistic";
+import Forecast from "../../Components/Forecasts/Forecast";
+import Tours from "../../Components/Tours/Tours";
 
 const Profile = () => {
   const { isAuth } = useSelector((state) => state.auth);
@@ -32,11 +36,11 @@ const Profile = () => {
             <Tabs.TabPane tab="Профиль" key="1">
               <Row gutter={[10, 30]}>
                 <ProfileInfo />
-                {/* <Achivements />
-                  <Statistic />
-                  <Forecast />
-                  <Tours title="29-й тур" />
-                  <Tours title="30-й тур" /> */}
+                <Achivements />
+                <Statistic />
+                <Forecast />
+                <Tours title="29-й тур" />
+                <Tours title="30-й тур" />
               </Row>
             </Tabs.TabPane>
             <Tabs.TabPane

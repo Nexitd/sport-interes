@@ -17,7 +17,7 @@ import Profile from "../Containers/Profile";
 import Footer from "../Containers/Footer/Footer";
 import Rooms from "../Containers/Rooms/Rooms";
 import TournirChampionship from "../Containers/TournirChampion/TournirChampionship";
-import Matches from '../Containers/Matches/Mathes'
+import Matches from "../Containers/Matches/Mathes";
 
 const antIcon = (
   <LoadingOutlined
@@ -53,6 +53,10 @@ const componentRoute = [
   {
     path: routes.matches,
     component: <Matches />,
+  },
+  {
+    path: `${routes.profile}/:id`,
+    component: <Profile />,
   },
 ];
 
