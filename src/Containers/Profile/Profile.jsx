@@ -5,14 +5,10 @@ import { useSelector } from "react-redux";
 import { Col, Row, Tabs } from "antd";
 import routes from "../../routing/routes";
 import Settings from "./Settings/Settings";
-import Cash from "../WithdrawalCash/Cash";
+import Cash from "./Cash/Cash";
 import Add from "../../Components/Add/Add";
 import s from "./Profile.module.css";
-import ProfileInfo from "../../Components/ProfileInfo/ProfileInfo";
-import Achivements from "../../Components/Achivements/Achivements";
-import Statistic from "../../Components/Statistic/Statistic";
-import Forecast from "../../Components/Forecasts/Forecast";
-import Tours from "../../Components/Tours/Tours";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
   const { isAuth } = useSelector((state) => state.auth);
@@ -34,14 +30,7 @@ const Profile = () => {
             centered
           >
             <Tabs.TabPane tab="Профиль" key="1">
-              <Row gutter={[10, 30]}>
-                <ProfileInfo />
-                <Achivements />
-                <Statistic />
-                <Forecast />
-                <Tours title="29-й тур" />
-                <Tours title="30-й тур" />
-              </Row>
+              <ProfileInfo />
             </Tabs.TabPane>
             <Tabs.TabPane
               tab={

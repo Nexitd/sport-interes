@@ -6,7 +6,7 @@ import s from "./Modal.module.css";
 
 const ModalEnter = ({ switchType }) => {
   const dispatch = useDispatch();
-  const { errorLogin } = useSelector(state => state.auth);
+  const { errorLogin } = useSelector((state) => state.auth);
 
   const log = (val) => {
     dispatch(login(val));
@@ -14,27 +14,47 @@ const ModalEnter = ({ switchType }) => {
 
   return (
     <div className={s.modal}>
-      <h2 className="title">Авторизация</h2>
-      <p className={s.modal__text}>Войти через</p>
+      <Typography.Title level={1}>Авторизация</Typography.Title>
+      <Typography.Paragraph>Войти через</Typography.Paragraph>
       <div className={s.modal__enter}>
         <img src="/assets/images/Footer/Group 735.svg" alt="" />
         <img src="/assets/images/Footer/Group 736.svg" alt="" />
       </div>
-      <p className={s.modal__text}>Или</p>
+      <Typography.Paragraph>Или</Typography.Paragraph>
       <Form onFinish={log}>
-        <Form.Item name="email" validateStatus={errorLogin ? "error" : ""} rules={[{ required: true }]}>
-          <Input type="email" placeholder="E-mail" />
+        <Form.Item
+          name="email"
+          validateStatus={errorLogin ? "error" : ""}
+          rules={[{ required: true }]}
+        >
+          <Input type="email" className="inputRadius" placeholder="E-mail" />
         </Form.Item>
-        <Form.Item name="password" validateStatus={errorLogin ? "error" : ""} rules={[{ required: true }]}>
-          <Input.Password placeholder="Пароль" />
+        <Form.Item
+          name="password"
+          validateStatus={errorLogin ? "error" : ""}
+          rules={[{ required: true }]}
+        >
+          <Input.Password className="inputRadius" placeholder="Пароль" />
         </Form.Item>
-        {errorLogin && <Typography.Text type="danger" className={s.errorLogin}>Неверный логин или пароль</Typography.Text>}
-        <Button htmlType="submit">Войти</Button>
+        {errorLogin && (
+          <Typography.Text type="danger" className={s.errorLogin}>
+            Неверный логин или пароль
+          </Typography.Text>
+        )}
+        <Button block shape="round" htmlType="submit">
+          Войти
+        </Button>
       </Form>
-      <p className={s.modal__acc}>Забыли пароль?</p>
-      <p className={s.modal__acc}>
-        Еще не зарегестрированы? <Button type="text" onClick={() => switchType(state => ({ ...state, type: "reg" }))}>Регистрация</Button>
-      </p>
+      <Typography.Paragraph>Забыли пароль?</Typography.Paragraph>
+      <div>
+        <span>Еще не зарегестрированы?</span>
+        <Button
+          type="link"
+          onClick={() => switchType((state) => ({ ...state, type: "reg" }))}
+        >
+          Регистрация
+        </Button>
+      </div>
     </div>
   );
 };
@@ -49,25 +69,29 @@ const ModalRegistration = ({ switchType }) => {
 
   return (
     <div className={s.modal}>
-      <h2 className="title" style={{ textAlign: "center" }}>
-        Регистрация
-      </h2>
-      <p className={s.modal__text}>Станьте частью команды уже сейчас!</p>
+      <Typography.Title level={1}>Регистрация</Typography.Title>
+      <Typography.Paragraph>
+        Станьте частью команды уже сейчас!
+      </Typography.Paragraph>
       <Form form={form} onFinish={registr}>
         <Form.Item name="phone" rules={[{ required: true }]}>
-          <Input type="tel" placeholder="Номер телефона" />
+          <Input
+            type="tel"
+            className="inputRadius"
+            placeholder="Номер телефона"
+          />
         </Form.Item>
         <Form.Item name="name" rules={[{ required: true }]}>
-          <Input placeholder="Имя, фамилия" />
+          <Input className="inputRadius" placeholder="Имя, фамилия" />
         </Form.Item>
         <Form.Item name="email" rules={[{ required: true }]}>
-          <Input type="email" placeholder="E-mail" />
+          <Input className="inputRadius" type="email" placeholder="E-mail" />
         </Form.Item>
         <Form.Item name="username" rules={[{ required: true }]}>
-          <Input placeholder="Никнейм" />
+          <Input className="inputRadius" placeholder="Никнейм" />
         </Form.Item>
         <Form.Item name="password" rules={[{ required: true }]}>
-          <Input.Password placeholder="Пароль" />
+          <Input.Password className="inputRadius" placeholder="Пароль" />
         </Form.Item>
         <Form.Item
           name="confirm"
@@ -86,11 +110,22 @@ const ModalRegistration = ({ switchType }) => {
             }),
           ]}
         >
-          <Input.Password placeholder="Повторите пароль" />
+          <Input.Password
+            className="inputRadius"
+            placeholder="Повторите пароль"
+          />
         </Form.Item>
-        <Button htmlType="submit">Регистрация</Button>
+        <Button block shape="round" htmlType="submit">
+          Регистрация
+        </Button>
       </Form>
-      <Button className={s.modal__acc} onClick={() => switchType(state => ({ ...state, type: "login" }))}>Уже есть аккаунт?</Button>
+      <Button
+        className={s.modal__acc}
+        type="link"
+        onClick={() => switchType((state) => ({ ...state, type: "login" }))}
+      >
+        Уже есть аккаунт?
+      </Button>
     </div>
   );
 };

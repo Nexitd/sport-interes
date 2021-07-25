@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Upload, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+import { avatarUpload } from "../../../store/slices/auth";
 import styles from "./ProfileInfo.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { avatarUpload } from "../../store/slices/auth";
 
 const getBase64 = (img, callback) => {
   if (!img) return;

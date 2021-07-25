@@ -1,10 +1,11 @@
 import React from "react";
-import { Row, Tabs, Col, Button, Input } from "antd";
+import { Row, Tabs, Col, Button, Input, List, Typography, Card } from "antd";
 import TournirTabs from "../../../Components/TournirTabs/TournirTabs";
 import TourCard from "../../../Components/Tournir/Card/TourCard";
 import { TurInfo } from "../../Tournir/Tournir";
 import s from "./CreateRoom.module.css";
 import RoomMembers from "../../../Components/RoomMembers/RoomMembers";
+import { list } from "./config";
 
 const TabsInfo = [
   {
@@ -89,7 +90,7 @@ const CreateRoom = () => {
   return (
     <Row gutter={[10, 30]}>
       <Row className={s.tour__select}>
-        <h2 className={s.tour__title}>Выбрать турнир</h2>
+        <Typography.Title level={2}>Выбрать турнир</Typography.Title>
         <Tabs defaultActiveKey="1">
           <Tabs.TabPane tab="Футбол" key="1">
             <div className={s.all__countries}>
@@ -204,31 +205,27 @@ const CreateRoom = () => {
           </Tabs.TabPane>
         </Tabs>
       </Row>
-      <Col span={12} style={{ background: "#fff" }}>
-        <h2 className="tour__title">Участники комнаты</h2>
-        <Input placeholder="Имя участника" className={s.member__name} />
-        {Members.map((member) => (
-          <RoomMembers key={member.id} name={member.name} />
-        ))}
+      <Col span={12}>
+        <Card>
+          <Typography.Title level={2}>Участники комнаты</Typography.Title>
+          <Input placeholder="Имя участника" className={s.member__name} />
+          {Members.map((member) => (
+            <RoomMembers key={member.id} name={member.name} />
+          ))}
+        </Card>
       </Col>
       <Col span={12}>
-        <div className={s.card}>
-          <h2 className="tour__title">Участники комнаты</h2>
+        <Card>
+          <Typography.Title level={2}>Название комнаты</Typography.Title>
           <Input placeholder="Название комнаты" className={s.room__name} />
-
-          <Button shape="round" style={{ display: "block" }}>
-            Название комнаты
-          </Button>
-
-          <p className={s.text}>
-            Прежде чем создать комнату, необходимо отправить приглашения
-            участникам комнаты.
-          </p>
-          <p className={s.text}>Без участников группа не может существовать.</p>
-          <p className={s.text}>
-            В комнате только создатель может управлять количеством участников.
-          </p>
-        </div>
+          <List
+            size="small"
+            header={null}
+            footer={null}
+            dataSource={list}
+            renderItem={(item) => <List.Item>{item}</List.Item>}
+          />
+        </Card>
       </Col>
     </Row>
   );

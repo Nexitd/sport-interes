@@ -44,19 +44,22 @@
 }
 
 .title {
-	font-weight: bold;
-	font-size: 28px;
-	line-height: 34px;
-	color: #119c51;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  color: #119c51;
 }
 
-
-.content > .ant-row{
+.content > .ant-row {
   margin: 0 !important;
 }
 
-@media (max-width:480px) {
-  .content > .ant-row{
+@media (max-width: 480px) {
+  .content > .ant-row {
     margin: 0 !important;
   }
+}
+
+.inputRadius {
+  border-radius: 40px;
 }

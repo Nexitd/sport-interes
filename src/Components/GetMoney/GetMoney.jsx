@@ -1,19 +1,18 @@
 import React from "react";
-import { Button, Checkbox, Form, Input } from "antd";
-import s from "./GetMoney.module.css";
+import { Button, Card, Checkbox, Form, Input, Row, Typography } from "antd";
 
 const GetMoney = () => {
   return (
-    <div className={s.container}>
-      <p className={s.text}>
+    <Card>
+      <Typography.Paragraph>
         Для вывода средст необходимо указать сумму вывода. Средства будут
         отправлены на карту “Сбербанка”, прикрепленную к номеру, который Вы
         указали при регистрации.
-      </p>
-      <div className={s.wrapper}>
+      </Typography.Paragraph>
+      <Row justify="center">
         <Form>
           <Form.Item name="sum">
-            <Input placeholder="Сумма вывода, руб." />
+            <Input className="inputRadius" placeholder="Сумма вывода, руб." />
           </Form.Item>
           <Form.Item
             name="agreement"
@@ -35,8 +34,8 @@ const GetMoney = () => {
             Вывести
           </Button>
         </Form>
-      </div>
-    </div>
+      </Row>
+    </Card>
   );
 };
 
