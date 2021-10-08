@@ -94,13 +94,11 @@ const Tours = ({
                   {info.firstImg}
                   <input
                     type='text'
-                    value={firstScore}
                     className={s.tour__score}
                     disabled
                   />
                   <input
                     type='text'
-                    value={secondScore}
                     className={s.tour__score}
                     disabled
                   />

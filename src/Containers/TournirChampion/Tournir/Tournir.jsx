@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col } from "antd";
 import ChampTournir from "../../../Components/ChampTournir/ChampTournir";
 import Tours from "../../../Components/Tours/Tours";
 import { ToursInfo } from "../Tours";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { getFootballGames } from "../../../store/slices/football";
 
 const dataSource = [
   {
@@ -133,30 +136,40 @@ const columns = [
 ];
 
 const Tournir = () => {
+  const dispatch = useDispatch();
+  const { footballGames } = useSelector((state) => state.football);
+
+  useEffect(() => {
+    dispatch(getFootballGames());
+  }, [dispatch]);
+
+  
+
   return (
-    <div className="content">
+    <div className='content'>
       <Row gutter={[10, 30]}>
         <Col span={24}>
           <ChampTournir dataSource={dataSource} columns={columns} />
         </Col>
+          <Col span={24}>
+            <Tours
+              title='29-й тур'
+              firstScore="2"
+              secondScore="3"
+              point='-'
+              match='/matches'
+              predictionScore1={ToursInfo[0].predictionScore1}
+              predictionScore2={ToursInfo[0].predictionScore2}
+              predict={ToursInfo[0].predictBtn}
+            />
+          </Col>
+        
         <Col span={24}>
           <Tours
-            title="29-й тур"
-            firstScore="-"
-            secondScore="-"
-            point="-"
-            match="/matches"
-            predictionScore1={ToursInfo[0].predictionScore1}
-            predictionScore2={ToursInfo[0].predictionScore2}
-            predict={ToursInfo[0].predictBtn}
-          />
-        </Col>
-        <Col span={24}>
-          <Tours
-            title="29-й тур"
-            firstScore="-"
-            secondScore="-"
-            point="-"
+            title='29-й тур'
+            firstScore='-'
+            secondScore='-'
+            point='-'
             predictionScore1={ToursInfo[0].predictionScore1}
             predictionScore2={ToursInfo[0].predictionScore2}
           />

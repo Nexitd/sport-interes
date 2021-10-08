@@ -23,11 +23,11 @@ const ModalEnter = ({ switchType }) => {
       <Typography.Paragraph>Или</Typography.Paragraph>
       <Form onFinish={log}>
         <Form.Item
-          name="email"
+          name="username"
           validateStatus={errorLogin ? "error" : ""}
           rules={[{ required: true }]}
         >
-          <Input type="email" className="inputRadius" placeholder="E-mail" />
+          <Input type="text" className="inputRadius" placeholder="Username" />
         </Form.Item>
         <Form.Item
           name="password"

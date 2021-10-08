@@ -3,16 +3,19 @@ import { getDate } from "../../../Utils/Date";
 import s from "./TourCard.module.css";
 
 const TourCard = ({ item }) => {
-  const { title, img, timestamp } = item;
+  const { name, logo, city } = item;
+  console.log(logo);
+  
   return (
     <div className={s.card}>
       <div className={s.section}>
-        {img}
-        <h3 className={s.title}>{title}</h3>
+        <img src={logo} alt=""/>
+        <h3 className={s.title}>{name}</h3>
       </div>
       <div className={s.section}>
-        <span className={s.text}>
-          {getDate(timestamp, {
+        {city}
+        {/* <span className={s.text}>
+          {getDate(, {
             month: "short",
             day: "numeric",
           })}
@@ -23,7 +26,7 @@ const TourCard = ({ item }) => {
             minute: "numeric",
             hour12: false,
           })}
-        </span>
+        </span> */}
       </div>
     </div>
   );

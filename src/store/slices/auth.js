@@ -13,7 +13,7 @@ export const checkAuthorization = createAsyncThunk(
 );
 
 export const login = createAsyncThunk("auth/login", async (data, { dispatch }) => {
-  const fet = await Fetch.post("authentication_token", data);
+  const fet = await Fetch.post("api/login", data);
   localStorage.setItem("access_token", fet.token);
   dispatch(checkAuthorization());
   return fet;
