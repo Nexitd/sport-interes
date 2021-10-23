@@ -10,10 +10,73 @@
   text-align: center;
 }
 
+.gridCont {
+  display: grid;
+  grid-template-areas: "rus it"
+    "eng fr"
+    "sp gr"
+    "all all";
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.rus {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: rus;
+  border-bottom: 1px solid #000;
+}
+
+.it {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: it;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.eng {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: eng;
+  border-bottom: 1px solid #000;
+}
+
+.fr {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: fr;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.sp {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: sp;
+  border-bottom: 1px solid #000;
+}
+
+.ger {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: gr;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.all {
+  padding: 10px;
+  cursor: pointer;
+  grid-area: all;
+  justify-self: center;
+}
 
 @media (max-width:480px) {
   .blockCenter {
-      justify-content: center;
+    justify-content: center;
   }
 
   .title {

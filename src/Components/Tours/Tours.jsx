@@ -77,9 +77,9 @@ const Tours = ({
       <h3 className={s.title}>{title}</h3>
       <Row gutter={[0, 10]}>
         {TourInfo.map((info) => (
-          <Col span={24}>
+          <Col span={24} key={info.id}>
             <Link to={routes.matches}>
-              <Card key={info.id} className={s.tour} hoverable>
+              <Card className={s.tour} hoverable>
                 <div className={s.time}>
                   <span className={s.tour__time}>
                     {getDate(timestamp, {
@@ -92,16 +92,8 @@ const Tours = ({
                 <div className={s.comands}>
                   <p className={s.command__name}>{info.firstComand}</p>
                   {info.firstImg}
-                  <input
-                    type='text'
-                    className={s.tour__score}
-                    disabled
-                  />
-                  <input
-                    type='text'
-                    className={s.tour__score}
-                    disabled
-                  />
+                  <input className={s.tour__score}  />
+                  <input  className={s.tour__score}  />
                   {info.secondImg}
                   <p className={s.command__name}>{info.secondComand}</p>
                 </div>

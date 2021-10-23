@@ -4,7 +4,6 @@ import s from "./TourCard.module.css";
 
 const TourCard = ({ item }) => {
   const { name, logo, city } = item;
-  console.log(logo);
   
   return (
     <div className={s.card}>
