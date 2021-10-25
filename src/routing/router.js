@@ -10,14 +10,14 @@ import { LoadingOutlined } from "@ant-design/icons";
 import routes from "./routes";
 import ErrorBoundary from "./ErrorBoundary";
 import PrivateRoute from "./PrivateRoute";
-import HomePage from "../Containers/HomePage";
-import Header from "../Containers/Header";
-import Tournir from "../Containers/Tournir";
-import Profile from "../Containers/Profile";
-import Footer from "../Containers/Footer/Footer";
-import Rooms from "../Containers/Rooms/Rooms";
-import TournirChampionship from "../Containers/TournirChampion/TournirChampionship";
-import Matches from "../Containers/Matches/Mathes";
+import HomePage from "../containers/HomePage";
+import Header from "../containers/Header";
+import Tournir from "../containers/Tournir";
+import Profile from "../containers/Profile";
+import Footer from "../containers/Footer/Footer";
+import Rooms from "../containers/Rooms/Rooms";
+import TournirChampionship from "../containers/TournirChampion/TournirChampionship";
+import Matches from "../containers/Matches/Mathes";
 
 const antIcon = (
   <LoadingOutlined
