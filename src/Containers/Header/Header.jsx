@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button, Space } from "antd";
 import { logoutReducer, successOff } from "../../store/slices/auth";
 import routes from "../../routing/routes";
-import { getDate } from "../../Utils/Date";
+import { getDate } from "../../Utils/date";
 import ModalCustom from "../../Components/Modal/ModalCustom";
 import logo from "../../assets/images/Header/logo_sport 1.svg";
 import s from "./Header.module.css";
@@ -29,12 +29,12 @@ const Header = () => {
       setModal({ open: false, type: "" });
       dispatch(successOff());
     }
-  }, [success, dispatch])
+  }, [success, dispatch]);
 
   const logout = () => {
     localStorage.removeItem("access_token");
     dispatch(logoutReducer());
-  }
+  };
 
   return (
     <div className={s.header}>
@@ -53,25 +53,36 @@ const Header = () => {
                   Личный кабинет
                 </Button>
               </Link>
-              <Button shape="round" onClick={logout}>Выйти</Button>
+              <Button shape="round" onClick={logout}>
+                Выйти
+              </Button>
             </Space>
           ) : (
             <Space>
               <Button
                 type="primary"
                 shape="round"
-                onClick={() => setModal({ open: true, type: "login"})}
+                onClick={() => setModal({ open: true, type: "login" })}
               >
                 Войти
               </Button>
-              <Button shape="round" onClick={() => setModal({ open: true, type: "reg"})}>
+              <Button
+                shape="round"
+                onClick={() => setModal({ open: true, type: "reg" })}
+              >
                 Регистрация
               </Button>
             </Space>
           )}
         </div>
       </div>
-      {modal.open && <ModalCustom modal={modal} switchType={setModal} onCancel={() => setModal({ open: false, type: ""})} />}
+      {modal.open && (
+        <ModalCustom
+          modal={modal}
+          switchType={setModal}
+          onCancel={() => setModal({ open: false, type: "" })}
+        />
+      )}
     </div>
   );
 };

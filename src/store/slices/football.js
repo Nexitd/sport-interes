@@ -5,7 +5,6 @@ export const footballEvents = createAsyncThunk(
   "auth/footballEvents",
   async () => {
     const foot = await Fetch.get("football/football_events");
-
     return foot;
   }
 );
@@ -14,7 +13,6 @@ export const footballCountry = createAsyncThunk(
   "auth/footballCountry",
   async () => {
     const countries = await Fetch.get("api/countries?page=1&itemsPerPage=30");
-
     return countries;
   }
 );
@@ -25,7 +23,6 @@ export const footballTeams = createAsyncThunk(
     const countries = await Fetch.get(
       "football/football_teams?page=1&itemsPerPage=10"
     );
-
     return countries;
   }
 );
@@ -44,10 +41,15 @@ export const getFootballGames = createAsyncThunk(
     const foot = await Fetch.get(
       "football/football_games?page=1&itemsPerPage=5"
     );
-
     return foot;
   }
 );
+
+export const getFootballEventsByCountryName = createAsyncThunk("football/getFootballEventsByCountryName", async (countryName) => {
+  const event = await Fetch.get(`football/football_events?page=1&itemsPerPage=30&country.name=${countryName}`);
+  console.log(event);
+  return event;
+});
 
 export const footballSlice = createSlice({
   name: "football",
@@ -58,6 +60,7 @@ export const footballSlice = createSlice({
     footballGames: [],
     country: {},
     filteredLeagues: [],
+    eventsByCountry: [],
   },
   reducers: {
     pushFilteredLeagues: (state, action) => {
@@ -80,6 +83,9 @@ export const footballSlice = createSlice({
     [getFootballGames.fulfilled]: (state, action) => {
       state.footballGames = action.payload;
     },
+    [getFootballEventsByCountryName.fulfilled]: (state, action) => {
+      state.eventsByCountry = action.payload;
+    }
   },
 });
 

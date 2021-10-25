@@ -1,10 +1,10 @@
 const routes = {
-  profile: "/profile",
-  rooms: "/rooms",
-  turnir: "/turnir",
   main: "/",
   login: "/login",
   registration: "/registration",
+  profile: "/profile",
+  rooms: "/rooms",
+  turnir: "/turnir",
   football: "/football",
   hockey: "/hockey",
   basketball: "/basketball",
@@ -12,7 +12,6 @@ const routes = {
   now: "/now",
   future: "/future",
   past: "/past"
-
 };
 
 export default routes;
