@@ -6,7 +6,7 @@ import { Col, Row, Tabs } from "antd";
 import routes from "../../routing/routes";
 import Settings from "./Settings/Settings";
 import Cash from "./Cash/Cash";
-import Advertising from "../../components/Advertising/Advertising";
+import { Advertising } from "../../components";
 import s from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 

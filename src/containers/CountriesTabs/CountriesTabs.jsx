@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { Card, Col, Row } from "antd";
+import { Card, Col, Row, Spin } from "antd";
 import { getFootballEventsByCountryName } from "../../store/slices/football";
 import { countries } from "../../utils/countries";
+import { TournirCard } from "../../components";
 
 const gridStyle = {
   width: "50%",
@@ -11,7 +12,7 @@ const gridStyle = {
 
 const CountriesTabs = () => {
   const dispatch = useDispatch();
-  const { eventsByCountry } = useSelector(
+  const { eventsByCountry, loading } = useSelector(
     (state) => state.football,
     shallowEqual
   );
@@ -24,28 +25,33 @@ const CountriesTabs = () => {
     dispatch(getFootballEventsByCountryName(countryName));
   };
 
-  // console.log(eventsByCountry);
-
   return (
     <>
       <Row>
         <Col span={12}>
-          <Row>
-            <Card>
-              {countries.map((country) => (
-                <Card.Grid
-                  key={country.id}
-                  style={gridStyle}
-                  onClick={() => getEvents(country.name)}
-                >
-                  <img src={country.flag} alt={country.shortName} />
-                  {country.name}
-                </Card.Grid>
-              ))}
-            </Card>
-          </Row>
+          <Card>
+            {countries.map((country) => (
+              <Card.Grid
+                key={country.id}
+                style={gridStyle}
+                onClick={() => getEvents(country.name)}
+              >
+                <img src={country.flag} alt={country.shortName} />
+                {country.name}
+              </Card.Grid>
+            ))}
+          </Card>
         </Col>
-        <Col span={12}></Col>
+        <Col span={12}>
+          {loading ? (
+            <Spin />
+          ) : (
+            Object.values(eventsByCountry).map(
+              (event) =>
+                typeof event !== "number" && <TournirCard item={event} />
+            )
+          )}
+        </Col>
       </Row>
     </>
   );

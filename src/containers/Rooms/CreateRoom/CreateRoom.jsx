@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Tabs, Col, Button, Input, List, Typography, Card } from "antd";
 import TournirTabs from "../../../components/TournirTabs/TournirTabs";
-import TourCard from "../../../components/Tournir/Card/TourCard";
+import { TournirCard } from "../../../components";
 import { TurInfo } from "../../Tournir/Tournir";
 import s from "./CreateRoom.module.css";
 import RoomMembers from "../../../components/RoomMembers/RoomMembers";
@@ -109,7 +109,7 @@ const CreateRoom = () => {
                 <h2 className={s.tour__title}>Турниры Италии</h2>
                 {TurInfo.map((item) => (
                   <Col span={24} key={item.id}>
-                    <TourCard item={item} />
+                    <TournirCard item={item} />
                   </Col>
                 ))}
               </Col>
@@ -117,7 +117,7 @@ const CreateRoom = () => {
                 <h2 className={s.tour__title}>Международные турниры</h2>
                 {TurInfo.map((item) => (
                   <Col span={24} key={item.id}>
-                    <TourCard item={item} />
+                    <TournirCard item={item} />
                   </Col>
                 ))}
               </Col>
@@ -146,7 +146,7 @@ const CreateRoom = () => {
                 <h2 className={s.tour__title}>Турниры Италии</h2>
                 {TurInfo.map((item) => (
                   <Col span={24} key={item.id}>
-                    <TourCard item={item} />
+                    <TournirCard item={item} />
                   </Col>
                 ))}
               </Col>
@@ -154,7 +154,7 @@ const CreateRoom = () => {
                 <h2 className={s.tour__title}>Международные турниры</h2>
                 {TurInfo.map((item) => (
                   <Col span={24} key={item.id}>
-                    <TourCard item={item} />
+                    <TournirCard item={item} />
                   </Col>
                 ))}
               </Col>
@@ -183,7 +183,7 @@ const CreateRoom = () => {
                 <h2 className={s.tour__title}>Турниры Италии</h2>
                 {TurInfo.map((item) => (
                   <Col span={24} key={item.id}>
-                    <TourCard item={item} />
+                    <TournirCard item={item} />
                   </Col>
                 ))}
               </Col>
@@ -191,7 +191,7 @@ const CreateRoom = () => {
                 <h2 className={s.tour__title}>Международные турниры</h2>
                 {TurInfo.map((item) => (
                   <Col span={24} key={item.id}>
-                    <TourCard item={item} />
+                    <TournirCard item={item} />
                   </Col>
                 ))}
               </Col>

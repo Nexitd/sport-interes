@@ -1,14 +1,15 @@
 import React from "react";
-import { getDate } from "../../../utils/date";
-import s from "./TourCard.module.css";
+import { getDate } from "../../utils/date";
+import defaultImage from "../../assets/img/tournirDefault.svg";
+import s from "./TournirCard.module.css";
 
-const TourCard = ({ item }) => {
+const TournirCard = ({ item }) => {
   const { name, logo, city } = item;
 
   return (
     <div className={s.card}>
       <div className={s.section}>
-        <img src={logo} alt="" />
+        <img src={logo || defaultImage} alt="" />
         <h3 className={s.title}>{name}</h3>
       </div>
       <div className={s.section}>
@@ -31,4 +32,4 @@ const TourCard = ({ item }) => {
   );
 };
 
-export default TourCard;
+export { TournirCard };

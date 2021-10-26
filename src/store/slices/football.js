@@ -1,66 +1,30 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import Fetch from "../../api/fetch";
 
-export const footballEvents = createAsyncThunk(
-  "auth/footballEvents",
-  async () => {
-    const foot = await Fetch.get("football/football_events");
-    return foot;
-  }
-);
-
-export const footballCountry = createAsyncThunk(
-  "auth/footballCountry",
-  async () => {
-    const countries = await Fetch.get("api/countries?page=1&itemsPerPage=30");
-    return countries;
-  }
-);
-
-export const footballTeams = createAsyncThunk(
-  "auth/footballCountry",
-  async () => {
-    const countries = await Fetch.get(
-      "football/football_teams?page=1&itemsPerPage=10"
+export const getFootballEventsByCountryName = createAsyncThunk(
+  "football/getFootballEventsByCountryName",
+  async (countryName) => {
+    const event = await Fetch.get(
+      `football/football_events?page=1&itemsPerPage=30&country.name=${countryName}`
     );
-    return countries;
+    return event;
   }
 );
 
-export const footballCountryById = createAsyncThunk(
-  "auth/footballCountryById",
-  async ({ id }) => {
-    const foot = await Fetch.get(`api/countries/${id}`);
-    return foot;
+export const getFootballEventsByIdTourir = createAsyncThunk(
+  "football/getFootballEventsByIdTourir",
+  async (id) => {
+    const event = await Fetch.get(`football/football_events/${id}`);
+    return event;
   }
 );
-
-export const getFootballGames = createAsyncThunk(
-  "football/footballGames",
-  async () => {
-    const foot = await Fetch.get(
-      "football/football_games?page=1&itemsPerPage=5"
-    );
-    return foot;
-  }
-);
-
-export const getFootballEventsByCountryName = createAsyncThunk("football/getFootballEventsByCountryName", async (countryName) => {
-  const event = await Fetch.get(`football/football_events?page=1&itemsPerPage=30&country.name=${countryName}`);
-  console.log(event);
-  return event;
-});
 
 export const footballSlice = createSlice({
   name: "football",
   initialState: {
-    footballLeague: [],
-    footballCountryes: [],
-    footballTeam: [],
-    footballGames: [],
-    country: {},
-    filteredLeagues: [],
+    loading: false,
     eventsByCountry: [],
+    selectEvent: {},
   },
   reducers: {
     pushFilteredLeagues: (state, action) => {
@@ -68,24 +32,16 @@ export const footballSlice = createSlice({
     },
   },
   extraReducers: {
-    [footballEvents.fulfilled]: (state, action) => {
-      state.footballLeague = action.payload;
-    },
-    [footballCountry.fulfilled]: (state, action) => {
-      state.footballCountryes = action.payload;
-    },
-    [footballCountryById.fulfilled]: (state, payload) => {
-      state.country = {};
-    },
-    [footballTeams.fulfilled]: (state, action) => {
-      state.footballTeam = action.payload;
-    },
-    [getFootballGames.fulfilled]: (state, action) => {
-      state.footballGames = action.payload;
-    },
     [getFootballEventsByCountryName.fulfilled]: (state, action) => {
       state.eventsByCountry = action.payload;
-    }
+      state.loading = false;
+    },
+    [getFootballEventsByCountryName.pending]: (state) => {
+      state.loading = true;
+    },
+    [getFootballEventsByIdTourir.fulfilled]: (state, action) => {
+      state.selectEvent = action.payload;
+    },
   },
 });
 

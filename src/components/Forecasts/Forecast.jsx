@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Tabs } from "antd";
 import { TurInfo } from "../../containers/Tournir/Tournir";
-import TourCard from "../Tournir/Card/TourCard";
+import { TournirCard } from "../TournirCard/TournirCard";
 import s from "./Forecast.module.css";
 
 const Forecast = () => {
@@ -19,7 +19,7 @@ const Forecast = () => {
           <Row gutter={12}>
             {TurInfo.map((item) => (
               <Col span={12} key={item.id}>
-                <TourCard item={item} />
+                <TournirCard item={item} />
               </Col>
             ))}
           </Row>
@@ -28,7 +28,7 @@ const Forecast = () => {
           <Row gutter={12}>
             {TurInfo.map((item) => (
               <Col span={12} key={item.id}>
-                <TourCard item={item} />
+                <TournirCard item={item} />
               </Col>
             ))}
           </Row>
@@ -37,7 +37,7 @@ const Forecast = () => {
           <Row gutter={12}>
             {TurInfo.map((item) => (
               <Col span={12} key={item.id}>
-                <TourCard item={item} />
+                <TournirCard item={item} />
               </Col>
             ))}
           </Row>

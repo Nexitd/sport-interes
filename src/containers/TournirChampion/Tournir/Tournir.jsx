@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Row, Col } from "antd";
 import ChampTournir from "../../../components/ChampTournir/ChampTournir";
 import Tours from "../../../components/Tours/Tours";
 import { ToursInfo } from "../Tours";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { getFootballGames } from "../../../store/slices/football";
 
 const dataSource = [
   {
@@ -136,13 +133,6 @@ const columns = [
 ];
 
 const Tournir = () => {
-  const dispatch = useDispatch();
-  const { footballGames } = useSelector((state) => state.football);
-
-  useEffect(() => {
-    dispatch(getFootballGames());
-  }, [dispatch]);
-
   return (
     <div className="content">
       <Row gutter={[10, 30]}>

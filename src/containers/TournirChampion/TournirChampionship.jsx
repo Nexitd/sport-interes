@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Tabs } from "antd";
-import Advertising from "../../components/Advertising/Advertising";
+import { Advertising } from "../../components";
 import Tournir from "./Tournir/Tournir";
 import Timetable from "./Timetable/Timetable";
 import s from "./Tournir.module.css";

@@ -4,7 +4,7 @@ import MyRooms from "./MyRooms/MyRooms";
 import Invites from "./Invites/Invites";
 import CreateRoom from "./CreateRoom/CreateRoom";
 import s from "./Rooms.module.css";
-import Advertising from "../../components/Advertising/Advertising";
+import { Advertising } from "../../components";
 
 const Rooms = () => {
   return (

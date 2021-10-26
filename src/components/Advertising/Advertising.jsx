@@ -3,4 +3,4 @@ import styles from "./Advertising.module.css";
 
 const Advertising = () => <div className={styles.add} />;
 
-export default Advertising;
+export { Advertising };

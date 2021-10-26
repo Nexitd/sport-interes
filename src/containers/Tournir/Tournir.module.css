@@ -12,14 +12,15 @@
 
 .gridCont {
   display: grid;
-  grid-template-areas: "rus it"
+  grid-template-areas:
+    "rus it"
     "eng fr"
     "sp gr"
     "all all";
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .rus {
@@ -74,16 +75,12 @@
   justify-self: center;
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .blockCenter {
     justify-content: center;
   }
 
   .title {
     text-align: center;
-  }
-
-  .blockLeft {
-    margin-left: 30px !important;
   }
 }

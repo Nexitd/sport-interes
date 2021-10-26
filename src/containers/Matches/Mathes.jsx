@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Typography, Button, Comment, Avatar, Card } from "antd";
 import MatchHead from "../../components/Match/MatchHead/MatchHead";
-import Advertising from "../../components/Advertising/Advertising";
+import { Advertising } from "../../components";
 import MatchProtocol from "../../components/Match/MatchProtocol/MatchProtocol";
 import { useSelector } from "react-redux";
 import TextArea from "antd/lib/input/TextArea";

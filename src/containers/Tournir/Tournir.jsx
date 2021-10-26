@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { shallowEqual, useSelector } from "react-redux";
 import { Breadcrumb, Card, Col, Row } from "antd";
 import classNames from "classnames";
 import routes from "../../routing/routes";
 import { sportTypes } from "../../utils/sportTypes";
 import { col } from "./utils";
-import TourCard from "../../components/Tournir/Card/TourCard";
+import { TournirCard } from "../../components";
 import TableScore from "../../components/TableScore/TableScore";
 
 import CountriesTabs from "../CountriesTabs/CountriesTabs";
@@ -42,14 +41,9 @@ export const TurInfo = [
 ];
 
 const Tournir = ({ type }) => {
-  const { footballLeague, filteredLeagues } = useSelector(
-    (state) => state.football,
-    shallowEqual
-  );
-
   return (
     <div className="content">
-      <Breadcrumb className={s.blockLeft}>
+      <Breadcrumb>
         <Breadcrumb.Item>
           <Link to={routes.main}>Главная</Link>
         </Breadcrumb.Item>
@@ -59,40 +53,9 @@ const Tournir = ({ type }) => {
       </Breadcrumb>
       <h1 className={s.title}>{sportTypes[type]}</h1>
 
-      <CountriesTabs />
       <Row gutter={[10, 10]} className={s.blockCenter}>
         <Col span={18}>
-          {type === "football" && (
-            <Row>
-              <Col span={12}>
-                <Row>
-                  {filteredLeagues.length !== 0 ? (
-                    filteredLeagues.map((index, item) => (
-                      <Col span={12} xs={24} lg={12} key={index}>
-                        <Link to="/turnir">
-                          <TourCard item={footballLeague[item]} />
-                        </Link>
-                      </Col>
-                    ))
-                  ) : (
-                    <p>There no data</p>
-                  )}
-                </Row>
-              </Col>
-            </Row>
-          )}
-
-          <Row gutter={10}>
-            {Object.keys(footballLeague).map((item, index) => {
-              return (
-                <Col span={12} xs={24} lg={12} key={index}>
-                  <Link to="/turnir">
-                    <TourCard item={footballLeague[item]} />
-                  </Link>
-                </Col>
-              );
-            })}
-          </Row>
+          <CountriesTabs />
         </Col>
         <Col span={6} xs={24} lg={6}>
           <TableScore columns={col} />
@@ -108,8 +71,8 @@ const Tournir = ({ type }) => {
                 Следите за другими видами спорта
               </Card>
             </Col>
-            {Object.keys(sportTypes).map((butt, index) => {
-              return (
+            {Object.keys(sportTypes).map(
+              (butt, index) =>
                 butt !== type && (
                   <Col span={8} xs={24} lg={8} key={index}>
                     <Link to={butt}>
@@ -123,8 +86,7 @@ const Tournir = ({ type }) => {
                     </Link>
                   </Col>
                 )
-              );
-            })}
+            )}
           </Row>
         </Col>
       </Row>
