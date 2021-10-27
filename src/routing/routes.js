@@ -11,7 +11,7 @@ const routes = {
   matches: "/matches",
   now: "/now",
   future: "/future",
-  past: "/past"
+  past: "/past",
 };
 
 export default routes;

@@ -2,12 +2,19 @@ import React from "react";
 import { getDate } from "../../utils/date";
 import defaultImage from "../../assets/img/tournirDefault.svg";
 import s from "./TournirCard.module.css";
+import { useHistory } from "react-router";
+import routes from "../../routing/routes";
 
 const TournirCard = ({ item }) => {
-  const { name, logo, city } = item;
+  const history = useHistory();
+  const { id, name, logo, city } = item;
+
+  const goToLeague = () => {
+    history.push(`${routes.turnir}/${id}`);
+  };
 
   return (
-    <div className={s.card}>
+    <div className={s.card} onClick={goToLeague}>
       <div className={s.section}>
         <img src={logo || defaultImage} alt="" />
         <h3 className={s.title}>{name}</h3>

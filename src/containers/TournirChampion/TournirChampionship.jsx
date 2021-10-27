@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col, Tabs } from "antd";
 import { Advertising } from "../../components";
 import Tournir from "./Tournir/Tournir";
 import Timetable from "./Timetable/Timetable";
 import s from "./Tournir.module.css";
 import Results from "./Results/Results";
+import { useParams } from "react-router";
+import { useDispatch } from "react-redux";
+import {
+  getCurrentToursById,
+  getPastToursById,
+} from "../../store/slices/football";
 
 const TournirChampionship = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(getCurrentToursById(id));
+    dispatch(getPastToursById(id));
+  }, [dispatch, id]);
+
   return (
     <div className="content">
       <Row>

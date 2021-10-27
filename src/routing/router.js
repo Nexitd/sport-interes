@@ -47,7 +47,7 @@ const componentRoute = [
     component: <Tournir type="hockey" />,
   },
   {
-    path: routes.turnir,
+    path: `${routes.turnir}/:id`,
     component: <TournirChampionship />,
   },
   {

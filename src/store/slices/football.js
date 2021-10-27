@@ -19,12 +19,34 @@ export const getFootballEventsByIdTourir = createAsyncThunk(
   }
 );
 
+export const getPastToursById = createAsyncThunk(
+  "football/getPastToursById",
+  async (id) => {
+    const event = await Fetch.get(
+      `football/football_events/getPastTours/${id}`
+    );
+    return event;
+  }
+);
+
+export const getCurrentToursById = createAsyncThunk(
+  "football/getCurrentToursById",
+  async (id) => {
+    const event = await Fetch.get(
+      `football/football_events/getCurrentTours/${id}`
+    );
+    return event;
+  }
+);
+
 export const footballSlice = createSlice({
   name: "football",
   initialState: {
     loading: false,
     eventsByCountry: [],
     selectEvent: {},
+    pastEvents: {},
+    curretEvents: {},
   },
   reducers: {
     pushFilteredLeagues: (state, action) => {
@@ -41,6 +63,12 @@ export const footballSlice = createSlice({
     },
     [getFootballEventsByIdTourir.fulfilled]: (state, action) => {
       state.selectEvent = action.payload;
+    },
+    [getPastToursById.fulfilled]: (state, action) => {
+      state.pastEvents = action.payload;
+    },
+    [getCurrentToursById.fulfilled]: (state, action) => {
+      state.curretEvents = action.payload;
     },
   },
 });

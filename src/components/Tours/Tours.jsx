@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card } from "antd";
+import { Row, Col, Card, Divider } from "antd";
 import { Link } from "react-router-dom";
 import { getDate } from "../../utils/date";
 import routes from "../../routing/routes";
@@ -74,6 +74,21 @@ const Tours = ({
 }) => {
   return (
     <Col span={24}>
+      <Card>
+        <Row>
+          <Col>12/12</Col>
+          <Divider
+            type="vertical"
+            style={{ backgroundColor: "#000", height: "auto" }}
+          />
+          <Col>Chelsi Man Citi</Col>
+          <Divider
+            type="vertical"
+            style={{ backgroundColor: "#000", height: "auto" }}
+          />
+          <Col>+4</Col>
+        </Row>
+      </Card>
       <h3 className={s.title}>{title}</h3>
       <Row gutter={[0, 10]}>
         {TourInfo.map((info) => (

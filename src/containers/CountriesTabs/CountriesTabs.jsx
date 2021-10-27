@@ -48,7 +48,9 @@ const CountriesTabs = () => {
           ) : (
             Object.values(eventsByCountry).map(
               (event) =>
-                typeof event !== "number" && <TournirCard item={event} />
+                typeof event !== "number" && (
+                  <TournirCard key={event.id} item={event} />
+                )
             )
           )}
         </Col>
