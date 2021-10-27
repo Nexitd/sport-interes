@@ -1,0 +1,70 @@
+.head {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.match__head {
+    padding: 20px 0;
+}
+
+.timetable {
+    font-size: 16px;
+    line-height: 19px;
+    color: #515151;
+    text-align: center;
+}
+
+.tour {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    color: #000;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.score {
+    font-size: 80px;
+    line-height: 97px;
+    color: #119C51;
+}
+
+.time {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    color: #119C51;
+}
+
+.timing {
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 19px;
+}
+
+
+.command {
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.city {
+    font-size: 14px;
+    line-height: 19px;
+    color: #515151;
+}
+
+.section {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section img {
+    width: 150px;
+    height: auto;
+}

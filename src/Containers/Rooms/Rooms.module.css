@@ -1,0 +1,25 @@
+.tabs :global(.ant-tabs-nav:before) {
+	border-bottom: none !important;
+}
+
+.tabs :global(.ant-tabs-tab) {
+	background-color: white;
+	border: none;
+}
+
+.tabs
+	:global(.ant-tabs-nav
+		> .ant-tabs-nav-wrap
+		> .ant-tabs-nav-list
+		> .ant-tabs-tab.ant-tabs-tab-active) {
+	background-color: #119c51;
+	border: none;
+}
+
+.tabs :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
+	color: white !important;
+}
+
+.tabs :global(.ant-tabs-tab:hover) {
+	color: #119c51 !important;
+}

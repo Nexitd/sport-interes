@@ -1,0 +1,42 @@
+.points__title {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  color: #119c51;
+  margin-bottom: 30px;
+}
+
+/*  */
+
+.card__section:first-of-type {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  background: #119c51;
+  width: 52.5px;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+}
+
+.card__section:last-of-type {
+  background: #fff;
+  height: 105px;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__text {
+  width: 212px;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #202020;
+}
+
+.count {
+  font-weight: 500;
+  font-size: 28px;
+  color: #fff;
+}

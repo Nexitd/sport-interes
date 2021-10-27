@@ -1,0 +1,63 @@
+.card {
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.left__direction {
+    flex-direction: row;
+    justify-self: flex-start;
+}
+
+.right__direction {
+    flex-direction: row-reverse;
+    justify-self: flex-end;
+}
+
+.name {
+    color: rgba(113, 113, 113, 1);
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.count {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    width: 24px;
+    height: 26px;
+    border-radius: 5px;
+    background-color: #119C51;
+    text-align: center;
+    margin: 0 5px;
+}
+
+
+.number {
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+    margin-bottom: 0;
+    margin: 0 5px;
+}
+
+.medium__abuse {
+    display: inline-block;
+    background-color: #fff500;
+    width: 24px;
+    height: 26px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.high__abuse {
+    display: inline-block;
+    background-color: red;
+    width: 24px;
+    height: 26px;
+    margin: 0 5px;
+    border-radius: 5px;
+}

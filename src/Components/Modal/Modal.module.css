@@ -1,0 +1,10 @@
+.modal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.errorLogin {
+  display: flex;
+  justify-content: center;
+}

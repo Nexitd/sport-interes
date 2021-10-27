@@ -1,0 +1,36 @@
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.rules__title {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  color: #119c51;
+  margin-bottom: 30px;
+}
+
+/*  */
+
+.card {
+  display: flex;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
+  box-shadow: 3px 3px 10px rgba(200, 200, 200, 0.25);
+}
+
+.card__text {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media (max-width:480px) {
+  /* .card {
+    margin-bottom: 20px;
+  } */
+}
+

@@ -1,14 +1,20 @@
-import './App.css';
-import Header from './Components/Header/Header';
-import Main from './Components/Main/Main';
+import React from "react";
+import { Provider } from "react-redux";
+import Routers from "./routing/router";
+import store from "./store/store";
+import AuthProvider from "./Utils/AuthProvider";
+import "antd/dist/antd.css";
+import "./App.css";
+import "./assets/styles/style.css";
 
 const App = () => {
   return (
-    <div className='wrapper'>
-        <Header />
-        <Main />
-    </div>
+    <Provider store={store}>
+      <AuthProvider>
+        <Routers />
+      </AuthProvider>
+    </Provider>
   );
-}
+};
 
 export default App;

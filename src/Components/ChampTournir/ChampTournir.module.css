@@ -1,0 +1,9 @@
+.table th:nth-child(2),
+td:nth-child(2) {
+    text-align: left !important;
+}
+
+.table th,
+td {
+    text-align: center !important;
+}

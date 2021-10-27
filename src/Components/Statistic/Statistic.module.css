@@ -1,0 +1,55 @@
+.title {
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 34px;
+	color: #119c51;
+}
+
+.card__head {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.subtitle {
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 26px;
+	margin-bottom: 20px;
+}
+
+.card__head img {
+	padding-bottom: 10px;
+}
+
+.statistic {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+table, tr {
+	width: 100%;
+}
+
+table td:last-of-type {
+	width: 20%;
+	text-align: right;
+}
+
+.criteria {
+	width: 80%;
+	font-size: 16px;
+	line-height: 19px;
+	color: #515151;
+}
+
+.score {
+	color: #BD0606;
+}
+
+.total__score {
+	color: #119c51;
+}

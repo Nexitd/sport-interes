@@ -1,0 +1,65 @@
+.football {
+  color: #119c51;
+}
+
+.hockey {
+  color: #1779c0;
+}
+
+.basketball {
+  color: #ff5f23;
+}
+
+.football_bg {
+  background-color: #119c51;
+}
+
+.hockey_bg {
+  background-color: #1779c0;
+}
+
+.basketball_bg {
+  background-color: #ff5f23;
+}
+
+.football_border {
+  border: 2px solid #119c51;
+  border-radius: 5px;
+}
+
+.hockey_border {
+  border: 2px solid #1779c0;
+  border-radius: 5px;
+}
+
+.basketball_border {
+  border: 2px solid #ff5f23;
+  border-radius: 5px;
+}
+
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  color: #119c51;
+}
+
+.content > .ant-row {
+  margin: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .content > .ant-row {
+    margin: 0 !important;
+  }
+}
+
+.inputRadius {
+  border-radius: 40px;
+}

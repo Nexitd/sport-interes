@@ -1,0 +1,88 @@
+.title {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #119c51;
+}
+
+.tour > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.comands {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+}
+
+.command__name {
+	font-size: 16px;
+	line-height: 19px;
+	text-align: right;
+	color: #202020;
+	margin: 0 10px;
+}
+
+.time {
+	width: 10%;
+}
+
+.score, .points {
+	width: 20%;
+}
+
+.time,
+.comands,
+.score,
+.points {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    border-right: 1px solid #656565;
+    border-left: 1px solid #656565;
+}
+
+.time {
+    border-right: 1px solid #656565;
+}
+
+.tour__time {
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+	color: #656565;
+}
+
+.tour__score {
+    width: 30px;
+    height: 30px;
+    outline: none;
+    background: #119C51;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	color: #fff;
+	border: none;
+    border-radius: 1.5px;
+	padding: 5px;
+	margin-right: 8px;
+    text-align: center;
+}
+
+.tour__point {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	color: #119c51;
+}

@@ -1,0 +1,48 @@
+.profile > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile__section {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile__section > :global(.ant-upload-picture-card-wrapper) {
+  width: auto;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #202020;
+}
+
+.reg {
+  font-size: 12px;
+  line-height: 14px;
+  color: #202020;
+}
+
+.reg span {
+  color: #a4a4a4;
+}
+
+.stat {
+  display: block;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  text-align: center;
+  color: #119c51;
+}
+
+.stat__info {
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #000000;
+}

@@ -1,0 +1,31 @@
+.table__title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #202020;
+}
+
+.table {
+  box-shadow: 3px 3px 10px rgba(200, 200, 200, 0.25);
+  border-radius: 5px;
+  padding: 20px 0;
+  background-color: white;
+}
+
+@media (max-width:480px) {
+  .table {
+    margin: 0 30px;
+  }
+
+  .table__title {
+    font-size: 28px;
+  }
+
+  .table th {
+    font-size: 10px !important;
+    padding: 5px !important;
+  }
+
+  .all__prognosises {
+    width: 75% !important;
+  }
+}

@@ -1,0 +1,17 @@
+.collapseArrow {
+  display: flex !important;
+  align-items: center;
+}
+
+.numbers {
+  font-size: 14px;
+  line-height: 17px;
+  color: #c4c4c4;
+  margin-right: 20px;
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
