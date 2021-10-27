@@ -25,7 +25,7 @@ const TournirChampionship = () => {
     <div className="content">
       <Row>
         <Col span={18}>
-          <h2 className="title">Англия - Чемпионат</h2>
+          <h2 className="title">Англия - Чемпионатsss</h2>
           <Tabs
             tabBarGutter={0}
             className={s.tabs}

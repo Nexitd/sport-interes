@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Divider } from "antd";
+import { Row, Col, Card, Divider, InputNumber } from "antd";
 import { Link } from "react-router-dom";
 import { getDate } from "../../utils/date";
 import routes from "../../routing/routes";
@@ -63,68 +63,34 @@ const TourInfo = [
   },
 ];
 
-const Tours = ({
-  title,
-  timestamp = TourInfo.time,
-  firstScore = "",
-  secondScore = "",
-  match,
-  point,
-  ...rest
-}) => {
+const Tours = ({ game, title }) => {
+  console.log(title, game);
   return (
     <Col span={24}>
-      <Card>
-        <Row>
-          <Col>12/12</Col>
-          <Divider
-            type="vertical"
-            style={{ backgroundColor: "#000", height: "auto" }}
-          />
-          <Col>Chelsi Man Citi</Col>
-          <Divider
-            type="vertical"
-            style={{ backgroundColor: "#000", height: "auto" }}
-          />
-          <Col>+4</Col>
-        </Row>
-      </Card>
-      <h3 className={s.title}>{title}</h3>
-      <Row gutter={[0, 10]}>
-        {TourInfo.map((info) => (
-          <Col span={24} key={info.id}>
-            <Link to={routes.matches}>
-              <Card className={s.tour} hoverable>
-                <div className={s.time}>
-                  <span className={s.tour__time}>
-                    {getDate(timestamp, {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: false,
-                    })}
-                  </span>
-                </div>
-                <div className={s.comands}>
-                  <p className={s.command__name}>{info.firstComand}</p>
-                  {info.firstImg}
-                  <input className={s.tour__score} />
-                  <input className={s.tour__score} />
-                  {info.secondImg}
-                  <p className={s.command__name}>{info.secondComand}</p>
-                </div>
-                <div className={s.score}>
-                  {rest.predictionScore1}
-                  {rest.predictionScore2}
-                  {rest.predict}
-                </div>
-                <div className={s.points}>
-                  <span className={s.tour__point}>{point}</span>
-                </div>
-              </Card>
-            </Link>
-          </Col>
-        ))}
-      </Row>
+      <p>{title}</p>
+      {(game.games || []).map(gamee => (
+        <Card key={gamee.id}>
+          <Row justify="space-between" style={{ padding: "0 45px" }}>
+            <Col>12/12</Col>
+            <Divider
+              type="vertical"
+              style={{ backgroundColor: "#000", height: "auto" }}
+            />
+            <Col>{gamee.team1.name}</Col>
+            <Col>
+            <InputNumber />
+            <InputNumber />
+            </Col>
+            <Col>{gamee.team2.name}</Col>
+            <Divider
+              type="vertical"
+              style={{ backgroundColor: "#000", height: "auto" }}
+            />
+            <Col>+4</Col>
+          </Row>
+        </Card>
+      ))}
+      
     </Col>
   );
 };

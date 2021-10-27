@@ -139,29 +139,6 @@ const Tournir = () => {
         <Col span={24}>
           <ChampTournir dataSource={dataSource} columns={columns} />
         </Col>
-        <Col span={24}>
-          <Tours
-            title="29-й тур"
-            firstScore="2"
-            secondScore="3"
-            point="-"
-            match="/matches"
-            predictionScore1={ToursInfo[0].predictionScore1}
-            predictionScore2={ToursInfo[0].predictionScore2}
-            predict={ToursInfo[0].predictBtn}
-          />
-        </Col>
-
-        <Col span={24}>
-          <Tours
-            title="29-й тур"
-            firstScore="-"
-            secondScore="-"
-            point="-"
-            predictionScore1={ToursInfo[0].predictionScore1}
-            predictionScore2={ToursInfo[0].predictionScore2}
-          />
-        </Col>
       </Row>
     </div>
   );
