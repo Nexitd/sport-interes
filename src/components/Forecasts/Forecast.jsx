@@ -1,7 +1,5 @@
 import React from "react";
 import { Row, Col, Tabs } from "antd";
-import { TurInfo } from "../../containers/Tournir/Tournir";
-import { TournirCard } from "../TournirCard/TournirCard";
 import s from "./Forecast.module.css";
 
 const Forecast = () => {
@@ -16,31 +14,13 @@ const Forecast = () => {
         centered
       >
         <Tabs.TabPane tab="Футбол" key="1">
-          <Row gutter={12}>
-            {TurInfo.map((item) => (
-              <Col span={12} key={item.id}>
-                <TournirCard item={item} />
-              </Col>
-            ))}
-          </Row>
+          <Row gutter={12}></Row>
         </Tabs.TabPane>
         <Tabs.TabPane tab="Хоккей" key="3">
-          <Row gutter={12}>
-            {TurInfo.map((item) => (
-              <Col span={12} key={item.id}>
-                <TournirCard item={item} />
-              </Col>
-            ))}
-          </Row>
+          <Row gutter={12}></Row>
         </Tabs.TabPane>
         <Tabs.TabPane tab="Баскетбол" key="4">
-          <Row gutter={12}>
-            {TurInfo.map((item) => (
-              <Col span={12} key={item.id}>
-                <TournirCard item={item} />
-              </Col>
-            ))}
-          </Row>
+          <Row gutter={12}></Row>
         </Tabs.TabPane>
       </Tabs>
     </Col>

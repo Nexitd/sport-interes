@@ -5,40 +5,12 @@ import classNames from "classnames";
 import routes from "../../routing/routes";
 import { sportTypes } from "../../utils/sportTypes";
 import { col } from "./utils";
-import { TournirCard } from "../../components";
 import TableScore from "../../components/TableScore/TableScore";
 
 import CountriesTabs from "../CountriesTabs/CountriesTabs";
 
 import logo from "../../assets/images/Turnir/image 22.svg";
 import s from "./Tournir.module.css";
-
-export const TurInfo = [
-  {
-    id: 1,
-    img: <img src={logo} alt="" />,
-    title: "Лига чемпионов",
-    timestamp: 25143252345435,
-  },
-  {
-    id: 2,
-    img: <img src={logo} alt="" />,
-    title: "Лига чемпионов",
-    timestamp: 25143252345435,
-  },
-  {
-    id: 3,
-    img: <img src={logo} alt="" />,
-    title: "Лига чемпионов",
-    timestamp: 25143252345435,
-  },
-  {
-    id: 4,
-    img: <img src={logo} alt="" />,
-    title: "Лига чемпионов",
-    timestamp: 25143252345435,
-  },
-];
 
 const Tournir = ({ type }) => {
   return (

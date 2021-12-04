@@ -19,7 +19,7 @@ const HomePage = () => {
             <MainTournir />
           </Col>
           <Col span={6} xs={24} lg={6}>
-            <TableScore />
+            <TableScore title="ТОП прогнозисты" btnText="Все прогнозисты" />
           </Col>
           <Col span={18} xs={20} lg={18}>
             <Points />

@@ -1,12 +1,9 @@
 import React from "react";
-import { Row, Col } from "antd";
-import Tours from "../../../components/Tours/Tours";
-import { ToursInfo } from "../Tours";
 import { useSelector } from "react-redux";
+import Tours from "../../../components/Tours/Tours";
 
 const Results = () => {
-
-  const { pastEvents } = useSelector(state => state.football);
+  const { pastEvents } = useSelector((state) => state.football);
 
   return (
     <div className="content">

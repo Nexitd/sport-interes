@@ -51,7 +51,7 @@ const Statistic = () => {
       <h2 className={s.title}>Статистика</h2>
       <Row gutter={[10, 10]}>
         {infoStat.map((info) => (
-          <Col span={8}>
+          <Col span={8} key={info.id}>
             <Card>
               <div className={s.card__head}>
                 {info.img}

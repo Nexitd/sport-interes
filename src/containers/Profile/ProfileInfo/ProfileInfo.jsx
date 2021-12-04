@@ -93,7 +93,7 @@ const ProfileInfo = () => {
             showThumbs={false}
           >
             {infoSlider.map((info) => (
-              <div>
+              <div key={info.id}>
                 <img src={info.img} alt="test" />
                 <p>{info.text}</p>
               </div>
@@ -103,8 +103,8 @@ const ProfileInfo = () => {
       </Col>
       <StatisticDemo />
       <Forecast />
-      <Tours title="29-й тур" />
-      <Tours title="30-й тур" />
+      {/* <Tours title="29-й тур" />
+      <Tours title="30-й тур" /> */}
     </Row>
   );
 };
